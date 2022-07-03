@@ -261,6 +261,9 @@ a{
 .skill-cards img:hover{
     transform: scale(1.2);
 }
+.skills h3{
+    margin-left: 1rem;
+}
 
 
 
@@ -558,6 +561,9 @@ a{
     }
     #about h3{
         text-align: center;
+    }
+    .skills h3{
+        margin: 0;
     }
 
 
