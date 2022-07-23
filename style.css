@@ -85,6 +85,21 @@ li{
     }
     .section-links.active{
         display: flex;
+        animation: fadeIn ease-out .5s forwards;
+
     }
+    
+    @keyframes fadeIn {
+        0%{
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0%)
+        }
+        
+    }
+
 
 }
