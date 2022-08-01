@@ -158,8 +158,8 @@ li{
 .container img{
     align-self: center;
     border-radius: 50%;
-    max-width: 8rem;
-    max-height: 8rem;
+    width: 16vw;
+    height: 16vw;
 }
 
 
