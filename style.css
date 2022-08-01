@@ -130,6 +130,37 @@ li{
     font-size: 1.2rem;
     font-weight: bold;
 }
+#about{
+    height: 50vh;
+
+}
+.title{
+    text-align: center;
+    font-weight: 800;
+    font-size: larger;
+    color: var(--text-color);
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    border: var(--primary-color) solid 3px;
+    border-radius: 20px;
+    margin: 1rem 3rem 1rem 3rem;
+    padding: 1rem;
+    background-color: var(--hover-background);
+
+}
+.container p{
+    margin: 1rem;
+    color: var(--text-color);
+    padding: 1rem;
+}
+.container img{
+    align-self: center;
+    border-radius: 50%;
+    max-width: 8rem;
+    max-height: 8rem;
+}
 
 
 
@@ -160,6 +191,13 @@ li{
     .landing-page{
         flex-direction: column;
         justify-content: end;
+    }
+    .container{
+        flex-direction: column;
+
+    }
+    .container p{
+        font-size: 20px;
     }
     
     @keyframes fadeIn {
