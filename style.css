@@ -148,7 +148,11 @@ li{
     margin: 1rem 3rem 1rem 3rem;
     padding: 1rem;
     background-color: var(--hover-background);
+    transition: .5s ease;
 
+}
+.container:hover{
+        box-shadow: -15px 20px 10px rgba(0, 0, 0, 0.3);
 }
 .container p{
     margin: 1rem;
