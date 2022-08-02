@@ -16,6 +16,7 @@ html{
     --background-color: #edf2fc;
     --hover-background: #f8faff;
     --color-secondary: #6B2EBA;
+    --shadow: rgba(0, 0, 0, 0.3);
 }
 .dark-theme{
     --primary-color: #8b53d4;
@@ -23,6 +24,7 @@ html{
     --background-color: #111516;
     --hover-background: #202e31;
     --color-secondary: #F2691B;
+    --shadow: rgba(0, 0, 0, 0.6);
     transition: all .5s;
 
 
@@ -152,7 +154,7 @@ li{
 
 }
 .container:hover{
-        box-shadow: -15px 20px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: -15px 20px 10px var(--shadow);
 }
 .container p{
     margin: 1rem;
