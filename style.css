@@ -16,7 +16,7 @@ html{
     --background-color: #edf2fc;
     --hover-background: #f8faff;
     --color-secondary: #6B2EBA;
-    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow: rgba(0, 0, 0, 0.4);
 }
 .dark-theme{
     --primary-color: #8b53d4;
@@ -24,7 +24,7 @@ html{
     --background-color: #111516;
     --hover-background: #202e31;
     --color-secondary: #F2691B;
-    --shadow: rgba(0, 0, 0, 0.6);
+    --shadow: rgba(0, 0, 0, 0.8);
     transition: all .5s;
 
 
@@ -144,17 +144,18 @@ li{
 .container{
     display: flex;
     justify-content: space-between;
-    border: var(--primary-color) solid 2px;
     border-radius: 20px;
     margin: 1rem 3rem 1rem 3rem;
     padding: 1rem;
     background-color: var(--hover-background);
     transition: box-shadow .5s ease;
+    box-shadow:-1px 1px 8px var(--shadow);
+
 
 }
 .container:hover{
-        box-shadow: -15px 20px 10px var(--shadow);
-        border-color: var(--hover-background);
+    box-shadow: -15px 20px 10px var(--shadow);
+    border-color: var(--hover-background);
 }
 .container p{
     margin: 1rem;
