@@ -16,19 +16,17 @@ html{
     --background-color: #edf2fc;
     --hover-background: #f8faff;
     --hover-color: #6B2EBA;
-    --secondary-color: #F2691B;
+    --secondary-color: #1d292c ;
     --shadow: rgba(0, 0, 0, 0.4);
-    --on-primary-color: #DFD3CD;
 }
 .dark-theme{
-    --primary-color: #8b53d4;
+    --primary-color: #733fb8;
     --text-color: #DFD3CD;
     --background-color: #111516;
     --hover-background: #202e31;
-    --secondary-color: #F2691B;
+    --secondary-color: #202e31;
     --hover-color: #F2691B;
     --shadow: rgba(0, 0, 0, 0.8);
-    --on-primary-color: #292320; 
     transition: all .5s;
 
 
@@ -225,17 +223,17 @@ a{
     z-index: 2;
     border-radius: 0px 20px 20px 0px;
     background-color: var(--secondary-color);
-    color: white;
+    color: whitesmoke;
 }
 .face1 img{
     width: 100%;
     height: 40vh;
     object-fit: cover;
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 10px;
 }
 .face2 .project-info{
-    font-size: 1.5vw;
+    font-size: 1.7vw;
     text-align: center;
     padding: 1rem;
 }
@@ -243,13 +241,12 @@ a{
     
     display: flex;
     justify-content: center;
-    color: white;
     
 }
 .face1 .project-name{
     width: 100%;
     text-align: center;
-    color: white;
+    color: whitesmoke;
     font-size: larger;
     font-weight: bolder;
 }
@@ -262,6 +259,9 @@ a{
     transform: translateX(0);
     opacity: 1;
 
+}
+.fa{
+    color: white;
 }
 
 
