@@ -13,7 +13,7 @@ themeToggle.addEventListener('click',()=>{
         themeToggle.src= "images/sun.png"
     else
         themeToggle.src = "images/moon.png"
-
+    sectionLinks.classList.toggle('active')
 })
 
 // map projects to dom 
