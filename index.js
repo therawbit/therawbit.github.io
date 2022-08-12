@@ -36,6 +36,6 @@ cardContainer.innerHTML = projects.map(project =>
                 </div>
             </div>
     `
-    )
+    ).join('')
 
 
