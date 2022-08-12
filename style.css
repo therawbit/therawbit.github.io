@@ -327,7 +327,6 @@ a{
         /* border:#111516 solid 2px; */
         max-height: 60vh;
         transition: 0.5s;
-        overflow: visible;
     }
     .face2 .project-info{
         font-size: 20px;
@@ -345,7 +344,7 @@ a{
         border-radius: 20px;
     }
     .card:hover{
-        max-height: auto;
+        max-height: fit-content;
     }
     
     .card:hover .face1{
