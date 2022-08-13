@@ -24,17 +24,19 @@ const cardContainer = document.getElementsByClassName("cards-container")[0]
 cardContainer.innerHTML = projects.map(project =>
     `
     <div class="card">
-                <div class="face1" data-aos="${project.aos}">
-                    <img src="${project.imageUrl}">
-                    <div class="project-name">${project.name}</div>
-                </div>
-                <div class="face2">
-                    <div class="project-info">${project.info}</div>
-                    <div class="project-links">
-                        <a target="_blank" href="${project.githubUrl}"><i class="fa fa-github fa-2x"></i></a>
-                    </div>
+        <div class="faces">
+            <div class="face1" data-aos="${project.aos}">
+                <img src="${project.imageUrl}">
+            </div>
+            <div class="face2">
+                <div class="project-info">${project.info}</div>
+                <div class="project-links">
+                    <a target="_blank" href="${project.githubUrl}"><i class="fa fa-github fa-2x"></i></a>
                 </div>
             </div>
+         </div>
+         <div class="project-name">${project.name}</div>
+    </div>
     `
     ).join('')
 
