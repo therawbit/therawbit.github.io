@@ -252,7 +252,7 @@ a{
     width: 100%;
     height:60vh; 
     object-fit: cover;
-    background-color: var(--image-background-color);
+    background-color: #dda637;
     border-radius: 20px;
 }
 .face2 .project-info{
@@ -387,6 +387,10 @@ a{
     }
     .card:hover .face2{
         transform: translateY(0);
+    }
+    .card:hover .face1 img{
+        border-radius: 20px 20px 0px 0px;
+
     }
     .name{
         text-shadow: none;
