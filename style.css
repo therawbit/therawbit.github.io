@@ -192,9 +192,11 @@ a{
 }
 .container img{
     align-self: center;
-    border-radius: 50%;
-    width: 18vw;
     height: 18vw;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+
 }
 
 /* for projects section  */
