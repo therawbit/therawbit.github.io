@@ -313,13 +313,18 @@ a{
         display: flex;
     }
     .section-links{
-        display: none;
-        opacity: 0;
+        
         flex-direction: column;
         width: 100%;
-        transform: translateX(100%); 
-        transition: transform .5s;
+        height: 0px;
+        transform: translateX(-100%);  
+        transition: all ease-in-out .5s;
+    }
 
+    .name{
+        font-family: 'Fredoka One';
+        color: var(--primary-color);
+        font-size: 2.5rem;
     }
     .navbar{
         flex-direction: column;
@@ -330,7 +335,9 @@ a{
     }
     .section-links.active{
         display: flex;
-        animation: fadeIn ease-out .5s forwards;    
+        transform: translate(0%);
+        transition: all ease-in-out .5s;
+        height: 280px;
     }
     .landing-page{
         flex-direction: column;
@@ -419,16 +426,5 @@ a{
     }
     
 
-    @keyframes fadeIn {
-        0%{
-            opacity: 0;
-            transform: translateX(100%);
-        }
-        100%{
-            opacity: 1;
-            transform: translateX(0%)
-        }
-        
-    }
 
 }
