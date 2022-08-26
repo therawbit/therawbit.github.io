@@ -18,7 +18,7 @@ themeToggle.addEventListener('click',()=>{
 
 // map projects to dom 
 const projects = [{"name":"Peak Productive","imageUrl":"images/pp.svg","info":"A Simple Productivity Focused Android app written in Java. It has basic tools for productivity like ToDo/Task to better manage task based on priority, Flash Card to quickly recall anything important and Pomodoro Clock to perform any task effeciently. ","githubUrl":"https://github.com/Sudru/PeakProductive"},
-{"name":"iOrder","imageUrl":"https://raw.githubusercontent.com/Sudru/iOrder/main/images/iOrder.png","info":"Android application created as a project for KU Hackfest 2022. It can be implemented by restaurant to allow their customers to order their foods with their own device by scanning the QR code placed at the table.","githubUrl":"https://github.com/Sudru/iOrder"},]
+{"name":"iOrder","imageUrl":"https://raw.githubusercontent.com/Sudru/iOrder/main/images/iOrder.png","info":"Android application created as a project for KU Hackfest 2022. It can be implemented by restaurant to allow their customers to order their foods with their own device by scanning the QR code placed at the table.","githubUrl":"https://github.com/Sudru/iOrder"}]
 const cardContainer = document.getElementsByClassName("cards-container")[0]
 
 cardContainer.innerHTML = projects.map(project =>
