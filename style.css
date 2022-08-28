@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=PT+Sans&family=Roboto+Condensed&display=swap');
-@import url('https://fonts.cdnfonts.com/css/pixeboy');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=PT+Sans&family=Roboto+Condensed&display=swap&family=Aladin&display=swap');
 *{
     margin: 0px;
     padding: 0px;
@@ -166,8 +165,8 @@ a{
 .title{
     text-align: center;
     color: var(--text-color);
-    font-size: 3.2vw;
-    font-family: 'Pixeboy', sans-serif;
+    font-size: 3.5vw;
+    font-family: 'Aladin', cursive;
 }
 .container{
     display: flex;
