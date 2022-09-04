@@ -339,6 +339,9 @@ a{
 .social-btn:hover span{
     width: 100px;
 }
+.github-icon{
+    color: var(--text-color);
+}
 
 
 /* for mobile view */
@@ -463,6 +466,7 @@ a{
     }
     .social-links{
         flex-direction: row;
+        margin-bottom: 1rem;
     }
     
 
