@@ -232,6 +232,7 @@ a{
     transition: all 0.6s;
     z-index: 2;
     height: auto;
+    
 }
 .face2{
     display: flex;
@@ -246,7 +247,7 @@ a{
     border-radius: 0px 20px 20px 0px;
     background-color: var(--card-background-color);
     color: whitesmoke;
-    box-shadow: -5px 5px 8px var(--shadow) ;
+    /* box-shadow: -5px 5px 8px var(--shadow) ; */
 
 }
 .face1 img{
@@ -256,6 +257,7 @@ a{
     object-fit: contain;
     background-color: #dda637;
     border-radius: 20px;
+    
 }
 .face2 .project-info{
     font-size: 1.7vw;
@@ -305,9 +307,41 @@ a{
     opacity: 1;
 
 }
-.fa{
+#projects .fa{
     color: white;
 }
+
+/* contact logo */
+.connect{
+    display: flex;
+}
+
+.social-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.social-btn{
+    background-color: var(--hover-background);
+    margin: 0.2rem;
+    display: flex;
+    box-shadow: 2px 2px 3px var(--shadow) ;
+    padding: 0.2rem;
+    justify-content: center;
+    border-radius: 10px;
+}
+.social-btn span{
+    align-self: center;
+    text-align: center;
+    width: 0px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    font-size: 0.8rem;
+}
+.social-btn:hover span{
+    width: 100px;
+}
+
 
 /* for mobile view */
 @media(max-width: 760px){
@@ -425,6 +459,12 @@ a{
     .card:hover .face1 img{
         border-radius: 20px 20px 0px 0px;
 
+    }
+    .connect{
+        flex-direction: column;
+    }
+    .social-links{
+        flex-direction: row;
     }
     
 
