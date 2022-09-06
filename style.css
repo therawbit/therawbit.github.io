@@ -342,6 +342,9 @@ a{
 .github-icon{
     color: var(--text-color);
 }
+.connect-art{
+    height: 100vh;
+}
 
 
 /* for mobile view */
@@ -467,6 +470,9 @@ a{
     .social-links{
         flex-direction: row;
         margin-bottom: 1rem;
+    }
+    .connect-art{
+        height: auto;
     }
     
 
