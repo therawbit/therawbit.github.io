@@ -4,8 +4,7 @@
     padding: 0px;
     font-size: x-large;
     box-sizing: border-box;
-    font-family: 'PT Sans', sans-serif;
-    
+    font-family: 'PT Sans', sans-serif;    
 }
 html{
     scroll-behavior: smooth;
@@ -172,7 +171,7 @@ a{
     display: flex;
     justify-content: space-between;
     border-radius: 20px;
-    margin: 1rem 3rem 1rem 3rem;
+    margin: 1rem 2rem 1rem 2rem;
     padding: 1rem;
     background-color: var(--hover-background);
     transition: box-shadow .5s ease;
@@ -198,6 +197,42 @@ a{
     border-radius: 20px;
 
 }
+/* education and skills */
+#about h3{
+    font-family: 'Roboto Condensed';
+    font-size: 1.5rem;
+    text-align: left;
+    
+}
+#education{
+    margin: 2rem;
+}
+.edu{
+    margin: 2rem 0rem 2rem 0rem;
+    color: var(--text-color);
+}
+.level{
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.school-name{
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+}
+.year{
+    font-style: italic;
+}
+.edu:nth-child(n+2) .level{
+    color: #46940f;
+}
+.edu:nth-child(2) .level{
+    color: #dd9a13;
+}
+
+
+
+
 
 /* for projects section  */
 #projects{
@@ -264,9 +299,9 @@ a{
 }
 .face2 .project-links{
     
-    display: flex;
-    justify-content: center;
+    text-align: center;
     z-index: 3;
+    
     
 }
 .card .project-name::before{

@@ -31,7 +31,7 @@ cardContainer.innerHTML = projects.map(project =>
             <div class="face2">
                 <div class="project-info">${project.info}</div>
                 <div class="project-links">
-                    <a target="_blank" href="${project.githubUrl}"><i class="fa fa-github fa-2x"></i></a>
+                    <a target="_blank" href="${project.githubUrl}"><i class="fa-brands fa-github fa-2x" style="color:whitesmoke;"></i></a>
                 </div>
             </div>
          </div>
