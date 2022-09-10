@@ -14,6 +14,7 @@ html{
     --text-color: #3b3837;
     --background-color: #edf2fc;
     --hover-background: #f8faff;
+    --skill-background: #f8faff;
     --hover-color: #ed0b70;
     --secondary-color: #ed0b70 ;
     --image-background-color: #6c7f83;
@@ -24,6 +25,7 @@ html{
 .dark-theme{
     --primary-color: #f95738;
     --text-color: #DFD3CD;
+    --skill-background: #DFD3CD;
     --background-color: #151a1b;
     --hover-background: #202e31;
     --secondary-color: #fcbf49;
@@ -200,14 +202,17 @@ a{
 /* education and skills */
 #about h3{
     font-family: 'Roboto Condensed';
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: left;
+    text-decoration: underline;
+    color: var(--hover-color);
     
 }
 .other-info{
     margin: 2rem;
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
     
 }
 .edu{
@@ -241,6 +246,7 @@ a{
     display: flex;
     flex-wrap: wrap;
     margin-top: 2rem;
+
 }
 .skill-cards img{
     padding: 0.2rem;
@@ -248,7 +254,7 @@ a{
     width: 4.5rem;
     transition: 0.2s;
     border-radius: 20px;
-    background-color: var(--hover-background);
+    background-color: var(--skill-background);
     box-shadow: -2px 2px 8px var(--shadow);
 
 }
@@ -536,7 +542,23 @@ a{
     .connect-art{
         height: auto;
     }
-    
+    .other-info{
+        flex-direction: column;
+        
+    }
+    .skills{
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .skill-cards{
+        justify-content: center;
+    }
+    .other-info{
+        padding: 0;
+    }
+    #about h3{
+        text-align: center;
+    }
 
 
 }
