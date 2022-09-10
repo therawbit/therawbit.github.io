@@ -204,11 +204,14 @@ a{
     text-align: left;
     
 }
-#education{
+.other-info{
     margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    
 }
 .edu{
-    margin: 2rem 0rem 2rem 0rem;
+    margin: 2rem 0rem 0rem 0rem;
     color: var(--text-color);
 }
 .level{
@@ -228,6 +231,29 @@ a{
 }
 .edu:nth-child(2) .level{
     color: #dd9a13;
+}
+
+/* skills  */
+.skills{
+    width: 50%;
+}
+.skill-cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.skill-cards img{
+    padding: 0.2rem;
+    margin: .5rem;
+    width: 4.5rem;
+    transition: 0.2s;
+    border-radius: 20px;
+    background-color: var(--hover-background);
+    box-shadow: -2px 2px 8px var(--shadow);
+
+}
+.skill-cards img:hover{
+    transform: scale(1.2);
 }
 
 
@@ -362,6 +388,7 @@ a{
     padding: 0.2rem;
     justify-content: center;
     border-radius: 10px;
+    
 }
 .social-btn span{
     align-self: center;
