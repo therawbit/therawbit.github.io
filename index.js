@@ -28,7 +28,7 @@ cardContainer.innerHTML = projects.map(project =>
     `
     <div class="card">
         <div class="faces">
-            <div class="face1" data-aos="${project.aos}">
+            <div class="face1">
                 <img src="${project.imageUrl}">
             </div>
             <div class="face2">
