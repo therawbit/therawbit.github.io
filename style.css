@@ -266,13 +266,10 @@ a {
     font-style: italic;
 }
 
-.edu:nth-child(n+2) .level {
+.edu.level {
     color: #46940f;
 }
 
-.edu:nth-child(2) .level {
-    color: #dd9a13;
-}
 
 /* skills  */
 .skills {
