@@ -1,194 +1,272 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>#!/bin/TheRawBit</title>
-    <meta name="description" content="Portfolio of Sudarshan Devkota (TheRawBit). Computer Engineer & Java Specialist.">
+    <meta
+      name="description"
+      content="Portfolio of Sudarshan Devkota (TheRawBit). Computer Engineer & Java Specialist."
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
-</head>
+  </head>
 
-<body class="bg-[#010204] text-slate-300 overflow-x-hidden selection:bg-cyan-500/30">
-
+  <body
+    class="bg-[#010204] text-slate-300 overflow-x-hidden selection:bg-cyan-500/30"
+  >
     <canvas id="kernel-canvas" class="fixed"></canvas>
     <nav
-        class="fixed top-0 w-full z-50 border-b border-cyan-900/10 bg-black/80 backdrop-blur-md px-6 py-3 flex justify-between items-center font-mono text-[12px] uppercase">
-        <div class="flex items-center gap-4 text-cyan-400">
-            <span class="animate-pulse">●</span>
-            <span>User: therawbit</span>
-            <span class="hidden md:inline text-slate-600">|</span>
-            <span class="hidden md:inline">Role: Java_AppSec_Engineer</span>
-        </div>
+      class="fixed top-0 w-full z-50 border-b border-cyan-900/10 bg-black/80 backdrop-blur-md px-6 py-3 flex justify-between items-center font-mono text-[12px] uppercase"
+    >
+      <div class="flex items-center gap-4 text-cyan-400">
+        <span class="animate-pulse">●</span>
+        <span>User: therawbit</span>
+        <span class="hidden md:inline text-slate-600">|</span>
+        <span class="hidden md:inline">Role: Java_AppSec_Engineer</span>
+      </div>
 
-        <button id="menu-btn" class="md:hidden text-cyan-400 p-2">
-            <i data-lucide="menu"></i>
-        </button>
+      <button id="menu-btn" class="md:hidden text-cyan-400 p-2">
+        <i data-lucide="menu"></i>
+      </button>
 
-        <div id="nav-links"
-            class="hidden absolute top-full left-0 w-full bg-black/95 border-b border-cyan-900/30 flex-col p-6 gap-6 md:static md:w-auto md:bg-transparent md:border-none md:flex md:flex-row md:p-0 md:gap-8 transition-all">
-            <a href="#certs" class="hover:text-cyan-400 transition-colors">/usr/certs</a>
-            <a href="#skills" class="hover:text-cyan-400 transition-colors">/sys/skills</a>
-            <a href="#exps" class="hover:text-cyan-400 transition-colors">/var/log/exp</a>
-            <a href="https://blog.sudarshandevkota.com.np" target="_blank"
-                class="hover:text-cyan-400 transition-colors">/dev/blog</a>
-        </div>
+      <div
+        id="nav-links"
+        class="hidden absolute top-full left-0 w-full bg-black/95 border-b border-cyan-900/30 flex-col p-6 gap-6 md:static md:w-auto md:bg-transparent md:border-none md:flex md:flex-row md:p-0 md:gap-8 transition-all"
+      >
+        <a href="#certs" class="hover:text-cyan-400 transition-colors"
+          >/usr/certs</a
+        >
+        <a href="#skills" class="hover:text-cyan-400 transition-colors"
+          >/sys/skills</a
+        >
+        <a href="#exps" class="hover:text-cyan-400 transition-colors"
+          >/var/log/exp</a
+        >
+        <a
+          href="https://blog.sudarshandevkota.com.np"
+          target="_blank"
+          class="hover:text-cyan-400 transition-colors"
+          >/dev/blog</a
+        >
+      </div>
     </nav>
 
     <main class="max-w-6xl mx-auto px-6">
-        <section id="home" class="min-h-screen flex flex-col justify-center px-6 md:px-24">
-            <div class="max-w-5xl">
-                <div class="inline-flex items-center gap-3 px-3 py-1 rounded-full mb-8">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-                    </span>
-                    <span class="mono text-[11px] text-cyan-400 tracking-widest uppercase">Kernel Version
-                        5.15.0-therawbit</span>
-                </div>
+      <section
+        id="home"
+        class="min-h-screen flex flex-col justify-center px-6 md:px-24"
+      >
+        <div class="max-w-5xl">
+          <div
+            class="inline-flex items-center gap-3 px-3 py-1 rounded-full mb-8"
+          >
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"
+              ></span>
+            </span>
+            <span
+              class="mono text-[11px] text-cyan-400 tracking-widest uppercase"
+              >Kernel Version 5.15.0-therawbit</span
+            >
+          </div>
 
-                <h1
-                    class="text-5xl sm:text-6xl md:text-8xl lg:text-[140px] font-black text-white tracking-tighter leading-none mb-4 break-all">
-                    THE<span
-                        class="text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-blue-700">RAW</span>BIT
-                </h1>
+          <h1
+            class="text-5xl sm:text-6xl md:text-8xl lg:text-[140px] font-black text-white tracking-tighter leading-none mb-4 break-all"
+          >
+            THE<span
+              class="text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-blue-700"
+              >RAW</span
+            >BIT
+          </h1>
 
-                <div
-                    class="mono text-slate-400 text-sm md:text-xl space-y-2 mb-12 border-l-2 border-cyan-900/50 pl-6 bg-transparent">
-                    <p class="typewriter inline-block">$ whoami</p><br>
-                    <p class="text-white">Sudarshan Devkota: Java Engineer // AppSec Researcher</p>
-                    <p class="text-slate-500 italic">"Building resilient systems. Breaking the unbreakable."</p>
-                </div>
+          <div
+            class="mono text-slate-400 text-sm md:text-xl space-y-2 mb-12 border-l-2 border-cyan-900/50 pl-6 bg-transparent"
+          >
+            <p class="typewriter inline-block">$ whoami</p>
+            <br />
+            <p class="text-white">
+              Sudarshan Devkota: Java Engineer // AppSec Researcher
+            </p>
+            <p class="text-slate-500 italic">
+              "Building resilient systems. Breaking the unbreakable."
+            </p>
+          </div>
 
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects"
-                        class="px-10 py-4 bg-cyan-600 text-black font-black mono text-xs hover:bg-cyan-400 transition-all z-10">INIT_ENGAGEMENT</a>
-                    <div class="px-6 py-4 border border-cyan-600 mono text-[12px] flex items-center gap-4">
-                        <span class="text-cyan-500">IP: 127.0.0.1</span>
-                        <span class="text-slate-600">|</span>
-                        <span class="text-cyan-500">LOC: NEPAL</span>
-                    </div>
-                </div>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              class="px-10 py-4 bg-cyan-600 text-black font-black mono text-xs hover:bg-cyan-400 transition-all z-10"
+              >INIT_ENGAGEMENT</a
+            >
+            <div
+              class="px-6 py-4 border border-cyan-600 mono text-[12px] flex items-center gap-4"
+            >
+              <span class="text-cyan-500">IP: 127.0.0.1</span>
+              <span class="text-slate-600">|</span>
+              <span class="text-cyan-500">LOC: NEPAL</span>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="skills" class="py-24 border-t border-cyan-900/10">
-            <h2 class="mono text-cyan-500 text-l mb-16 tracking-[0.3em] uppercase">/usr/bin/capabilities</h2>
+      <section id="skills" class="py-24 border-t border-cyan-900/10">
+        <h2 class="mono text-cyan-500 text-l mb-16 tracking-[0.3em] uppercase">
+          /usr/bin/capabilities
+        </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                <div class="space-y-8">
-                    <h3 class="text-white font-bold flex items-center gap-3 italic tracking-widest">
-                        <i data-lucide="code-2" class="text-blue-500"></i> BUILD_ENVIRONMENT
-                    </h3>
-                    <ul class="space-y-4 pl-4 border-l border-blue-600 font-mono text-sm">
-                        <li class="flex items-center gap-3 text-slate-300">
-                            <span class="text-blue-500 font-bold">01</span> Java / Spring Boot / Hibernate
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-300">
-                            <span class="text-blue-500 font-bold">02</span> PostgreSQL / Redis / SQL
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-300">
-                            <span class="text-blue-500 font-bold">03</span> Docker / Microservices / Maven
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-300">
-                            <span class="text-blue-500 font-bold">04</span> Linux System Administration
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-300">
-                            <span class="text-blue-500 font-bold">05</span> JUnit / Mockito (TDD)
-                        </li>
-                    </ul>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div class="space-y-8">
+            <h3
+              class="text-white font-bold flex items-center gap-3 italic tracking-widest"
+            >
+              <i data-lucide="code-2" class="text-blue-500"></i>
+              BUILD_ENVIRONMENT
+            </h3>
+            <ul
+              class="space-y-4 pl-4 border-l border-blue-600 font-mono text-sm"
+            >
+              <li class="flex items-center gap-3 text-slate-300">
+                <span class="text-blue-500 font-bold">01</span> Java / Spring
+                Boot / Hibernate
+              </li>
+              <li class="flex items-center gap-3 text-slate-300">
+                <span class="text-blue-500 font-bold">02</span> PostgreSQL /
+                Redis / SQL
+              </li>
+              <li class="flex items-center gap-3 text-slate-300">
+                <span class="text-blue-500 font-bold">03</span> Docker /
+                Microservices / Maven
+              </li>
+              <li class="flex items-center gap-3 text-slate-300">
+                <span class="text-blue-500 font-bold">04</span> Linux System
+                Administration
+              </li>
+              <li class="flex items-center gap-3 text-slate-300">
+                <span class="text-blue-500 font-bold">05</span> JUnit / Mockito
+                (TDD)
+              </li>
+            </ul>
+          </div>
 
-                <div class="space-y-8">
-                    <h3 class="text-white font-bold flex items-center gap-3 italic tracking-widest">
-                        <i data-lucide="shield-check" class="text-cyan-500"></i> AUDIT_ENVIRONMENT
-                    </h3>
-                    <ul class="space-y-4 pl-4 border-l border-cyan-600 font-mono text-sm">
-                        <li class="flex items-center gap-3 text-slate-300">
-                            <span class="text-cyan-500 font-bold">01</span> Burp Suite / OWASP Top 10
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-300">
-                            <span class="text-cyan-500 font-bold">02</span> Wireshark / PCAP Analysis
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-300">
-                            <span class="text-cyan-500 font-bold">03</span> Android Reverse (JADX / Smali)
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-300">
-                            <span class="text-cyan-500 font-bold">04</span> Ghidra / GDB / Static Analysis
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-300">
-                            <span class="text-cyan-500 font-bold">05</span> Network & Web Forensics
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+          <div class="space-y-8">
+            <h3
+              class="text-white font-bold flex items-center gap-3 italic tracking-widest"
+            >
+              <i data-lucide="shield-check" class="text-cyan-500"></i>
+              AUDIT_ENVIRONMENT
+            </h3>
+            <ul
+              class="space-y-4 pl-4 border-l border-cyan-600 font-mono text-sm"
+            >
+              <li class="flex items-center gap-3 text-slate-300">
+                <span class="text-cyan-500 font-bold">01</span> Burp Suite /
+                OWASP Top 10
+              </li>
+              <li class="flex items-center gap-3 text-slate-300">
+                <span class="text-cyan-500 font-bold">02</span> Wireshark / PCAP
+                Analysis
+              </li>
+              <li class="flex items-center gap-3 text-slate-300">
+                <span class="text-cyan-500 font-bold">03</span> Android Reverse
+                (JADX / Smali)
+              </li>
+              <li class="flex items-center gap-3 text-slate-300">
+                <span class="text-cyan-500 font-bold">04</span> Ghidra / GDB /
+                Static Analysis
+              </li>
+              <li class="flex items-center gap-3 text-slate-300">
+                <span class="text-cyan-500 font-bold">05</span> Network & Web
+                Forensics
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
+      <section id="exps" class="py-24 border-t border-cyan-900/20">
+        <h2 class="mono text-cyan-500 text-l mb-12 tracking-widest uppercase">
+          /var/log/experience
+        </h2>
+        <div class="space-y-12" id="exp"></div>
+      </section>
+      <section id="certs" class="py-24 border-t border-cyan-900/20">
+        <h2 class="mono text-cyan-500 text-l mb-12 tracking-widest uppercase">
+          /etc/security/verified_tokens
+        </h2>
 
-        <section id="exps" class="py-24 border-t border-cyan-900/20">
-            <h2 class="mono text-cyan-500 text-l mb-12 tracking-widest uppercase">/var/log/experience</h2>
-            <div class="space-y-12" id="exp">
+        <div id="cert-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+      </section>
 
-            </div>
-        </section>
-        <section id="certs" class="py-24 border-t border-cyan-900/20">
-            <h2 class="mono text-cyan-500 text-l mb-12 tracking-widest uppercase">/etc/security/verified_tokens</h2>
+      <section id="projects" class="py-24 border-t border-cyan-900/10">
+        <h2 class="mono text-cyan-500 text-l mb-12 tracking-[0.4em] uppercase">
+          /mnt/projects
+        </h2>
 
-            <div id="cert-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            </div>
-        </section>
+        <div
+          id="project-rack"
+          class="grid grid-cols-1 md:grid-cols-3 gap-5"
+        ></div>
+      </section>
 
-
-        <section id="projects" class="py-24 border-t border-cyan-900/10">
-            <h2 class="mono text-cyan-500 text-l mb-12 tracking-[0.4em] uppercase">/mnt/projects
-            </h2>
-
-            <div id="project-rack" class="grid grid-cols-1 md:grid-cols-3 gap-5">
-            </div>
-        </section>
-
-        <section id="education" class="py-24 border-t border-cyan-900/20">
-            <h2 class="mono text-cyan-500 text-l mb-12 tracking-widest uppercase">/usr/lib/binary_origins</h2>
-            <div id="education-card" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-            </div>
-        </section>
-
+      <section id="education" class="py-24 border-t border-cyan-900/20">
+        <h2 class="mono text-cyan-500 text-l mb-12 tracking-widest uppercase">
+          /usr/lib/binary_origins
+        </h2>
+        <div
+          id="education-card"
+          class="grid grid-cols-1 md:grid-cols-2 gap-8"
+        ></div>
+      </section>
     </main>
 
     <footer id="contact" class="py-20 border-t border-cyan-900/30 text-center">
-        <div class="flex justify-center gap-12 mb-8">
-            <a href="https://github.com/therawbit" target="_blank"
-                class="text-slate-500 hover:text-cyan-400 transition-all scale-125">
-                <i data-lucide="github"></i>
-            </a>
+      <div class="flex justify-center gap-12 mb-8">
+        <a
+          href="https://github.com/therawbit"
+          target="_blank"
+          class="text-slate-500 hover:text-cyan-400 transition-all scale-125"
+        >
+          <i data-lucide="github"></i>
+        </a>
 
-            <a href="https://linkedin.com/in/sudarshan-devkota-348368242/" target="_blank"
-                class="text-slate-500 hover:text-blue-400 transition-all scale-125">
-                <i data-lucide="linkedin"></i>
-            </a>
+        <a
+          href="https://linkedin.com/in/sudarshan-devkota-348368242/"
+          target="_blank"
+          class="text-slate-500 hover:text-blue-400 transition-all scale-125"
+        >
+          <i data-lucide="linkedin"></i>
+        </a>
 
-            <a href="https://x.com/therawbit" target="_blank"
-                class="text-slate-500 hover:text-white transition-all scale-125">
-                <i data-lucide="twitter"></i>
-            </a>
+        <a
+          href="https://x.com/therawbit"
+          target="_blank"
+          class="text-slate-500 hover:text-white transition-all scale-125"
+        >
+          <i data-lucide="twitter"></i>
+        </a>
 
-            <a href="https://mail.google.com/mail/u/0/?to=hello@sudarshandevkota.com.np&fs=1&tf=cm" target="_blank"
-                class="text-slate-500 hover:text-white transition-all scale-125">
-                <i data-lucide="mail"></i>
-            </a>
-        </div>
+        <a
+          href="https://mail.google.com/mail/u/0/?to=contact@sudarshandevkota.com.np&fs=1&tf=cm"
+          target="_blank"
+          class="text-slate-500 hover:text-white transition-all scale-125"
+        >
+          <i data-lucide="mail"></i>
+        </a>
+      </div>
 
-        <p class="mono text-[10px] text-slate-600 tracking-widest uppercase">
-            Sudarshan Devkota // TheRawBit // End_of_Line
-        </p>
+      <p class="mono text-[10px] text-slate-600 tracking-widest uppercase">
+        Sudarshan Devkota // TheRawBit // End_of_Line
+      </p>
     </footer>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
+
