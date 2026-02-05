@@ -1,23 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Inter:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 
-/* 1. SYSTEM VARIABLES 
-   Centralizing these makes the theme easy to update (e.g., changing cyan to orange) */
+/* 1. SYSTEM VARIABLES */
 :root {
-    --bg-main: #010204;
-    --cyan-primary: #06b6d4;
-    --cyan-dim: rgba(6, 182, 212, 0.3);
-    --cyan-glow: rgba(6, 182, 212, 0.15);
-    --border-dim: rgba(6, 182, 212, 0.1);
+    --bg-main: #050505;
+    --accent: #FA927F;        
+    --accent-muted: #fdb3a7;  
+    --accent-glow: rgba(250, 146, 127, 0.2);
+    --border-dim: rgba(255, 255, 255, 0.08);
     --transition-speed: 400ms;
     --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
 }
 
-/* 2. BASE RESET */
+/* 2. BASE RESET & PREMIUM TEXTURE */
+html {
+    scroll-padding-top: 5rem;
+    font-size: 16px; /* Base for REM calculations */
+}
+
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans);
     background-color: var(--bg-main);
     color: #cbd5e1;
     overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Grain Overlay for Cinematic Texture */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Radial Vignette for Depth */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+    z-index: -5;
 }
 
 .mono { font-family: var(--font-mono); }
@@ -28,106 +57,189 @@ body {
     inset: 0;
     z-index: -10;
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 0.25;
 }
 
-/* 4. UTILITY COMPONENTS */
-.typewriter {
-    border-right: 2px solid var(--cyan-primary);
-    white-space: nowrap;
-    animation: blink-caret 0.75s step-end infinite;
+/* 4. NAVIGATION & MOBILE OVERRIDE */
+nav a {
+    font-size: 0.8rem; /* 11.2px */
+    font-weight: 700 !important;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
 }
 
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: var(--cyan-primary); }
+nav a:hover {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent-glow);
 }
 
-.skill-tag {
-    @apply px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-mono transition-all cursor-default rounded-sm;
-}
-.skill-tag:hover { @apply border-blue-500 text-white; }
-.skill-tag.sec { @apply border-cyan-900/30 text-cyan-800; }
-.skill-tag.sec:hover { @apply border-cyan-500 text-cyan-400; }
+/* Mobile Menu Logic */
+@media (max-width: 767px) {
+    #nav-links.mobile-active {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(5, 5, 5, 0.98);
+        backdrop-filter: blur(25px);
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 200;
+        padding: 2rem;
+    }
 
-/* 5. PROJECT MODULES (Hardware Blade Design) */
+    #nav-links.mobile-active a {
+        font-size: 1rem; /* 24px */
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: 0.1em;
+    }
+
+    #menu-btn {
+        z-index: 210;
+        padding: 0.5rem;
+        background: rgba(250, 146, 127, 0.05);
+        border: 1px solid var(--accent-glow);
+        border-radius: 4px;
+    }
+}
+
+/* 5. RESPONSIVE TYPOGRAPHY (REM-BASED) */
+.hero-title {
+    font-size: clamp(2.5rem, 10vw + 1rem, 9.375rem);
+}
+
+.section-label {
+    font-size: 0.75rem; /* 12px */
+}
+
+.project-desc, .exp-desc {
+    font-size: 0.875rem !important; /* 14px */
+    color: #94a3b8 !important;
+    line-height: 1.7 !important;
+}
+
+.log-entry-number {
+    color: var(--accent) !important;
+    font-weight: 900 !important;
+    font-size: 1.5rem !important; /* 24px */
+    text-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* 6. PROJECT MODULES (Hardware Blade Design) */
 .module-card {
-    /* @apply relative bg-black/40 border border-cyan-600 p-5 h-[210px] flex flex-col justify-between transition-all duration-500 overflow-hidden; */
-    /* clip-path: polygon(0 0, 100% 0, 100% 88%, 94% 100%, 0 100%); */
-    backdrop-filter: blur(4px);
-    padding: 1rem;
-    border: 1px solid rgb(64, 89, 114);
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-dim);
+    padding: 1.5rem;
+    height: auto;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all var(--transition-speed) cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+    border-radius: 4px;
 }
 
 .module-card:hover {
-    border-color: var(--cyan-primary);
-    box-shadow: 0 0 8px var(--cyan-primary), inset 0 0 8px var(--cyan-primary);
-    transform: translateY(-3px);
-
+    border-color: var(--accent);
+    background: rgba(250, 146, 127, 0.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 0 15px var(--accent-glow);
+    transform: translateY(-8px);
 }
 
-/* Background Circuit Animation */
+/* Circuit Animation */
 .circuit-container {
-    @apply absolute inset-0 w-full h-full pointer-events-none z-0 opacity-5 transition-opacity duration-700;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.05;
+    transition: opacity 0.5s ease;
 }
-.module-card:hover .circuit-container { opacity: 0.3; }
+
+.module-card:hover .circuit-container { opacity: 0.2; }
 
 .circuit-path {
     fill: none;
-    stroke: var(--cyan-primary);
-    stroke-width: 0.8;
-    stroke-dasharray: 40;
-    stroke-dashoffset: 40;
+    stroke: var(--accent);
+    stroke-width: 1.2;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
 }
-.module-card:hover .circuit-path { animation: electrical-flow 3s linear infinite; }
+.module-card:hover .github-icon-large {
+
+color: var(--accent);
+
+filter: drop-shadow(0 0 8px var(--accent));
+
+transform: rotate(10deg);
+
+}
+
+.module-card:hover .circuit-path {
+    animation: electrical-flow 2.5s linear infinite;
+}
 
 @keyframes electrical-flow {
-    to { stroke-dashoffset: -80; }
+    to { stroke-dashoffset: -120; }
 }
 
-/* 6. CERTIFICATION MODULES (Scanline Effect) */
+/* 7. CERTIFICATION MODULES */
 .cert-card {
-    @apply relative border border-cyan-900/30 bg-cyan-950/10 p-6 transition-all duration-500 overflow-hidden cursor-pointer;
+    position: relative;
+    border: 1px solid var(--border-dim);
+    background: linear-gradient(145deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+    padding: 1.5rem;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .cert-card:hover {
-    border-color: var(--cyan-primary);
-    background-color: rgba(6, 182, 212, 0.05);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px -10px var(--cyan-glow);
+    border-color: var(--accent);
+    background-color: var(--accent-glow);
+    transform: translateY(-5px);
 }
-
-/* Hologram Decryption Text */
-.cert-card .doc-link {
-    @apply opacity-0 translate-y-2 transition-all duration-300;
-}
-.cert-card:hover .doc-link { @apply opacity-100 translate-y-0; }
-
 
 .cert-card::after {
     content: '';
     position: absolute;
     top: -100%; left: 0; width: 100%; height: 2px;
-    background: var(--cyan-primary);
-    box-shadow: 0 0 15px var(--cyan-primary);
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    box-shadow: 0 0 15px var(--accent);
     opacity: 0;
 }
-.cert-card:hover::after { animation: scan-v 2.5s linear infinite; opacity: 1; }
 
-/* certificate image pop-up css*/
+.cert-card:hover::after {
+    animation: scan-v 2.5s linear infinite;
+    opacity: 1;
+}
 
+@keyframes scan-v {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+/* 8. MODAL STYLING */
 #cert-modal {
     display: none;
     position: fixed;
     inset: 0;
     z-index: 9999;    
-    background: rgba(1, 2, 4, 0.1); 
-    backdrop-filter: blur(5px) saturate(180%);
-    -webkit-backdrop-filter: blur(5px) saturate(180%);
+    background: rgba(0, 0, 0, 0.95); 
+    backdrop-filter: blur(15px);
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.4s ease;
 }
 
 #cert-modal.active {
@@ -138,67 +250,44 @@ body {
 .modal-content {
     position: relative;
     max-width: 85%;
-    max-height: 85vh;
+    background: #000;
+    border: 1px solid var(--accent);
     padding: 2px;
-    
-    background: rgba(255, 255, 255, 0.03); 
-    border: 1px solid var(--cyan-primary); 
-    border-radius: 4px;    
-    box-shadow: 
-        0 20px 50px rgba(0, 0, 0, 0.6),
-        0 0 30px rgba(6, 182, 212, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-
-    transform: translateY(30px) scale(0.95);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+    transform: scale(0.95);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#cert-modal.active .modal-content {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-}
-
-#modal-img {
-    display: block;
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-}
+#cert-modal.active .modal-content { transform: scale(1); }
 
 .modal-close {
     position: absolute;
-    bottom: -45px;
+    bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
-    color: var(--cyan-primary);
+    color: var(--accent);
     cursor: pointer;
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-    white-space: nowrap;
+    font-size: 0.68rem; /* 11px */
+    letter-spacing: 4px;
+    font-weight: 700;
+    opacity: 0.7;
+    transition: all 0.3s;
 }
 
-.modal-close:hover {
-    opacity: 1;
-    text-shadow: 0 0 10px var(--cyan-primary);
+/* 9. ASSETS & ANIMATIONS */
+.typewriter {
+    border-right: 2px solid var(--accent);
+    animation: blink-caret 0.75s step-end infinite;
 }
 
-@keyframes scan-v {
-    0% { top: 0; }
-    100% { top: 100%; }
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent); }
 }
 
-/* 7. ASSETS */
-.github-icon-large {
-    @apply w-10 h-10 text-slate-700 transition-all duration-300;
+.header-line {
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    flex-grow: 1;
+    opacity: 0.3;
 }
-.module-card:hover .github-icon-large {
-    color: var(--cyan-primary);
-    filter: drop-shadow(0 0 8px var(--cyan-primary));
-    transform: scale(1.1);
-}
-
-

@@ -1,272 +1,219 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>#!/bin/TheRawBit</title>
-    <meta
-      name="description"
-      content="Portfolio of Sudarshan Devkota (TheRawBit). Computer Engineer & Java Specialist."
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/lucide@latest"></script>
-  </head>
 
-  <body
-    class="bg-[#010204] text-slate-300 overflow-x-hidden selection:bg-cyan-500/30"
-  >
-    <canvas id="kernel-canvas" class="fixed"></canvas>
-    <nav
-      class="fixed top-0 w-full z-50 border-b border-cyan-900/10 bg-black/80 backdrop-blur-md px-6 py-3 flex justify-between items-center font-mono text-[12px] uppercase"
-    >
-      <div class="flex items-center gap-4 text-cyan-400">
-        <span class="animate-pulse">●</span>
-        <span>User: therawbit</span>
-        <span class="hidden md:inline text-slate-600">|</span>
-        <span class="hidden md:inline">Role: Java_AppSec_Engineer</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>#!/bin/TheRawBit</title>
+  <meta name="description" content="Portfolio of Sudarshan Devkota (TheRawBit). Computer Engineer & Java Specialist." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    html {
+      scroll-padding-top: 5rem;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-[#FA927F] selection:text-black bg-[#050505]">
+  <canvas id="kernel-canvas" class="fixed inset-0 z-[-10] pointer-events-none opacity-25"></canvas>
+
+  <nav
+    class="fixed top-0 w-full z-[100] border-b border-[#FA927F]/10 bg-[#050505]/80 backdrop-blur-xl px-8 py-4 flex justify-between items-center font-mono text-[0.75rem] uppercase">
+    <div class="flex items-center gap-6 text-[#FA927F]">
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FA927F] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#FA927F]"></span>
+        </span>
+        <span class="font-bold tracking-tighter">therawbit@root#</span>
       </div>
+      <span class="hidden lg:inline text-[#fdb3a7]/70 font-medium">Role: Java_AppSec_Engineer</span>
+    </div>
 
-      <button id="menu-btn" class="md:hidden text-cyan-400 p-2">
-        <i data-lucide="menu"></i>
-      </button>
+    <button id="menu-btn" class="md:hidden text-[#FA927F] relative z-[201]">
+      <i data-lucide="menu"></i>
+    </button>
 
-      <div
-        id="nav-links"
-        class="hidden absolute top-full left-0 w-full bg-black/95 border-b border-cyan-900/30 flex-col p-6 gap-6 md:static md:w-auto md:bg-transparent md:border-none md:flex md:flex-row md:p-0 md:gap-8 transition-all"
-      >
-        <a href="#certs" class="hover:text-cyan-400 transition-colors"
-          >/usr/certs</a
-        >
-        <a href="#skills" class="hover:text-cyan-400 transition-colors"
-          >/sys/skills</a
-        >
-        <a href="#exps" class="hover:text-cyan-400 transition-colors"
-          >/var/log/exp</a
-        >
-        <a
-          href="https://blog.sudarshandevkota.com.np"
-          target="_blank"
-          class="hover:text-cyan-400 transition-colors"
-          >/dev/blog</a
-        >
-      </div>
-    </nav>
+    <div id="nav-links" class="hidden md:flex items-center gap-10 text-[#cbd5e1]">
+      <a href="#certs" class="hover:text-[#FA927F] transition-all">/certs</a>
+      <a href="#skills" class="hover:text-[#FA927F] transition-all">/skills</a>
+      <a href="#exps" class="hover:text-[#FA927F] transition-all">/logs</a>
+      <a href="https://blog.sudarshandevkota.com.np" target="_blank"
+        class="px-4 py-1 border border-[#FA927F]/20 rounded-full hover:bg-[#FA927F] hover:text-black transition-all">/dev/blog</a>
+    </div>
+  </nav>
 
-    <main class="max-w-6xl mx-auto px-6">
-      <section
-        id="home"
-        class="min-h-screen flex flex-col justify-center px-6 md:px-24"
-      >
-        <div class="max-w-5xl">
-          <div
-            class="inline-flex items-center gap-3 px-3 py-1 rounded-full mb-8"
-          >
-            <span class="relative flex h-2 w-2">
-              <span
-                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"
-              ></span>
-              <span
-                class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"
-              ></span>
-            </span>
-            <span
-              class="mono text-[11px] text-cyan-400 tracking-widest uppercase"
-              >Kernel Version 5.15.0-therawbit</span
-            >
-          </div>
+  <main class="max-w-6xl mx-auto px-6">
+    <section id="home" class="min-h-screen flex flex-col justify-center pt-20">
+      <div class="max-w-5xl">
+        <div
+          class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-[#FA927F]/20 bg-[#FA927F]/5 mb-10">
+          <span
+            class="mono text-[0.75rem] text-[#FA927F] tracking-[0.3em] font-bold uppercase">Kernel_v5.15.0-verified</span>
+        </div>
 
-          <h1
-            class="text-5xl sm:text-6xl md:text-8xl lg:text-[140px] font-black text-white tracking-tighter leading-none mb-4 break-all"
-          >
-            THE<span
-              class="text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-blue-700"
-              >RAW</span
-            >BIT
-          </h1>
+        <h1
+          class="text-6xl sm:text-7xl md:text-8xl lg:text-[150px] font-black text-white tracking-tighter leading-[0.85] mb-8 select-none uppercase">
+          THE<span
+            class="text-transparent bg-clip-text bg-gradient-to-tr from-[#FA927F] via-[#fdb3a7] to-white">RAW</span>BIT
+        </h1>
 
-          <div
-            class="mono text-slate-400 text-sm md:text-xl space-y-2 mb-12 border-l-2 border-cyan-900/50 pl-6 bg-transparent"
-          >
-            <p class="typewriter inline-block">$ whoami</p>
-            <br />
-            <p class="text-white">
-              Sudarshan Devkota: Java Engineer // AppSec Researcher
-            </p>
-            <p class="text-slate-500 italic">
-              "Building resilient systems. Breaking the unbreakable."
-            </p>
-          </div>
+        <div class="mono text-slate-400 text-sm md:text-lg space-y-3 mb-12 border-l border-[#FA927F]/30 pl-8">
+          <p class="typewriter inline-block text-[#FA927F]">$ whoami</p>
+          <h2 class="text-white text-2xl md:text-3xl font-bold tracking-tight">
+            Sudarshan Devkota <span class="text-[#fdb3a7]/50 font-light">// Engineer</span>
+          </h2>
+          <p class="text-slate-500 max-w-lg leading-relaxed">
+            "Building resilient systems. Breaking the unbreakable."
+          </p>
+        </div>
 
-          <div class="flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              class="px-10 py-4 bg-cyan-600 text-black font-black mono text-xs hover:bg-cyan-400 transition-all z-10"
-              >INIT_ENGAGEMENT</a
-            >
+        <div class="flex flex-wrap gap-6 items-center">
+          <a href="#projects"
+            class="group relative px-12 py-5 bg-[#FA927F] text-black font-black mono text-xs uppercase tracking-widest overflow-hidden transition-all">
+            <span class="relative z-10">INIT_ENGAGEMENT</span>
             <div
-              class="px-6 py-4 border border-cyan-600 mono text-[12px] flex items-center gap-4"
-            >
-              <span class="text-cyan-500">IP: 127.0.0.1</span>
-              <span class="text-slate-600">|</span>
-              <span class="text-cyan-500">LOC: NEPAL</span>
+              class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300">
             </div>
+          </a>
+
+          <div
+            class="px-8 py-5 border border-white/5 bg-white/5 backdrop-blur-sm mono text-[11px] flex items-center gap-6">
+            <div class="flex items-center gap-2"><span class="text-[#FA927F]">●</span> IP: 127.0.0.1</div>
+            <div class="w-px h-4 bg-white/10"></div>
+            <div class="flex items-center gap-2"><span class="text-[#fdb3a7]">●</span> LOC: NEPAL</div>
           </div>
         </div>
-      </section>
-
-      <section id="skills" class="py-24 border-t border-cyan-900/10">
-        <h2 class="mono text-cyan-500 text-l mb-16 tracking-[0.3em] uppercase">
-          /usr/bin/capabilities
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div class="space-y-8">
-            <h3
-              class="text-white font-bold flex items-center gap-3 italic tracking-widest"
-            >
-              <i data-lucide="code-2" class="text-blue-500"></i>
-              BUILD_ENVIRONMENT
-            </h3>
-            <ul
-              class="space-y-4 pl-4 border-l border-blue-600 font-mono text-sm"
-            >
-              <li class="flex items-center gap-3 text-slate-300">
-                <span class="text-blue-500 font-bold">01</span> Java / Spring
-                Boot / Hibernate
-              </li>
-              <li class="flex items-center gap-3 text-slate-300">
-                <span class="text-blue-500 font-bold">02</span> PostgreSQL /
-                Redis / SQL
-              </li>
-              <li class="flex items-center gap-3 text-slate-300">
-                <span class="text-blue-500 font-bold">03</span> Docker /
-                Microservices / Maven
-              </li>
-              <li class="flex items-center gap-3 text-slate-300">
-                <span class="text-blue-500 font-bold">04</span> Linux System
-                Administration
-              </li>
-              <li class="flex items-center gap-3 text-slate-300">
-                <span class="text-blue-500 font-bold">05</span> JUnit / Mockito
-                (TDD)
-              </li>
-            </ul>
-          </div>
-
-          <div class="space-y-8">
-            <h3
-              class="text-white font-bold flex items-center gap-3 italic tracking-widest"
-            >
-              <i data-lucide="shield-check" class="text-cyan-500"></i>
-              AUDIT_ENVIRONMENT
-            </h3>
-            <ul
-              class="space-y-4 pl-4 border-l border-cyan-600 font-mono text-sm"
-            >
-              <li class="flex items-center gap-3 text-slate-300">
-                <span class="text-cyan-500 font-bold">01</span> Burp Suite /
-                OWASP Top 10
-              </li>
-              <li class="flex items-center gap-3 text-slate-300">
-                <span class="text-cyan-500 font-bold">02</span> Wireshark / PCAP
-                Analysis
-              </li>
-              <li class="flex items-center gap-3 text-slate-300">
-                <span class="text-cyan-500 font-bold">03</span> Android Reverse
-                (JADX / Smali)
-              </li>
-              <li class="flex items-center gap-3 text-slate-300">
-                <span class="text-cyan-500 font-bold">04</span> Ghidra / GDB /
-                Static Analysis
-              </li>
-              <li class="flex items-center gap-3 text-slate-300">
-                <span class="text-cyan-500 font-bold">05</span> Network & Web
-                Forensics
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="exps" class="py-24 border-t border-cyan-900/20">
-        <h2 class="mono text-cyan-500 text-l mb-12 tracking-widest uppercase">
-          /var/log/experience
-        </h2>
-        <div class="space-y-12" id="exp"></div>
-      </section>
-      <section id="certs" class="py-24 border-t border-cyan-900/20">
-        <h2 class="mono text-cyan-500 text-l mb-12 tracking-widest uppercase">
-          /etc/security/verified_tokens
-        </h2>
-
-        <div id="cert-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
-      </section>
-
-      <section id="projects" class="py-24 border-t border-cyan-900/10">
-        <h2 class="mono text-cyan-500 text-l mb-12 tracking-[0.4em] uppercase">
-          /mnt/projects
-        </h2>
-
-        <div
-          id="project-rack"
-          class="grid grid-cols-1 md:grid-cols-3 gap-5"
-        ></div>
-      </section>
-
-      <section id="education" class="py-24 border-t border-cyan-900/20">
-        <h2 class="mono text-cyan-500 text-l mb-12 tracking-widest uppercase">
-          /usr/lib/binary_origins
-        </h2>
-        <div
-          id="education-card"
-          class="grid grid-cols-1 md:grid-cols-2 gap-8"
-        ></div>
-      </section>
-    </main>
-
-    <footer id="contact" class="py-20 border-t border-cyan-900/30 text-center">
-      <div class="flex justify-center gap-12 mb-8">
-        <a
-          href="https://github.com/therawbit"
-          target="_blank"
-          class="text-slate-500 hover:text-cyan-400 transition-all scale-125"
-        >
-          <i data-lucide="github"></i>
-        </a>
-
-        <a
-          href="https://linkedin.com/in/sudarshan-devkota-348368242/"
-          target="_blank"
-          class="text-slate-500 hover:text-blue-400 transition-all scale-125"
-        >
-          <i data-lucide="linkedin"></i>
-        </a>
-
-        <a
-          href="https://x.com/therawbit"
-          target="_blank"
-          class="text-slate-500 hover:text-white transition-all scale-125"
-        >
-          <i data-lucide="twitter"></i>
-        </a>
-
-        <a
-          href="https://mail.google.com/mail/u/0/?to=contact@sudarshandevkota.com.np&fs=1&tf=cm"
-          target="_blank"
-          class="text-slate-500 hover:text-white transition-all scale-125"
-        >
-          <i data-lucide="mail"></i>
-        </a>
       </div>
+    </section>
 
-      <p class="mono text-[10px] text-slate-600 tracking-widest uppercase">
-        Sudarshan Devkota // TheRawBit // End_of_Line
+    <section id="skills" class="py-16 border-t border-white/5">
+      <h2 class="mono text-[#FA927F] text-s mb-16 tracking-[0.5em] uppercase">/usr/bin/capabilities</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+
+        <div class="group">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="p-3 bg-[#FA927F]/10 rounded-lg text-[#FA927F]">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-white text-lg font-bold uppercase tracking-tight">Build_Environment</h3>
+          </div>
+          <ul class="space-y-6">
+            <li class="flex items-start gap-4">
+              <span class="mono text-[1rem] text-[#FA927F]/40 mt-1">01</span>
+              <div>
+                <p class="text-white font-bold text-sm mb-1 uppercase tracking-wider">Java Ecosystem</p>
+                <p class="text-slate-500 text-xs">Spring Boot, Hibernate, Maven, JUnit, Mockito</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="mono text-[1rem] text-[#FA927F]/40 mt-1">02</span>
+              <div>
+                <p class="text-white font-bold text-sm mb-1 uppercase tracking-wider">Data & Architecture</p>
+                <p class="text-slate-500 text-xs">PostgreSQL, Redis, Microservices, Docker</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="p-3 bg-[#FA927F]/10 rounded-lg text-[#FA927F]">
+              <i data-lucide="terminal" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-white text-lg font-bold uppercase tracking-tight">Script_&_Web</h3>
+          </div>
+          <ul class="space-y-6">
+            <li class="flex items-start gap-4">
+              <span class="mono text-[1rem] text-[#FA927F]/40 mt-1">01</span>
+              <div>
+                <p class="text-white font-bold text-sm mb-1 uppercase tracking-wider">Frontend Stack</p>
+                <p class="text-slate-500 text-xs">React.js, Next.js, JavaScript, Tailwind CSS, HTML5</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="mono text-[1rem] text-[#FA927F]/40 mt-1">02</span>
+              <div>
+                <p class="text-white font-bold text-sm mb-1 uppercase tracking-wider">Automation</p>
+                <p class="text-slate-500 text-xs">Python Scripting, Bash, Node.js Runtime</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="p-3 bg-[#fdb3a7]/10 rounded-lg text-[#fdb3a7]">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-white text-lg font-bold uppercase tracking-tight">Audit_&_Infra</h3>
+          </div>
+          <ul class="space-y-6">
+            <li class="flex items-start gap-4">
+              <span class="mono text-[1rem] text-[#fdb3a7]/40 mt-1">01</span>
+              <div>
+                <p class="text-white font-bold text-sm mb-1 uppercase tracking-wider">AppSec & RE</p>
+                <p class="text-slate-500 text-xs">Burp Suite, Ghidra, JADX, Static Analysis</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="mono text-[1rem] text-[#fdb3a7]/40 mt-1">02</span>
+              <div>
+                <p class="text-white font-bold text-sm mb-1 uppercase tracking-wider">DevOps & OS</p>
+                <p class="text-slate-500 text-xs">Jenkins, CI/CD Pipelines, Linux (Arch/Debian)</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="exps" class="py-16 border-t border-white/5">
+      <h2 class="mono text-[#FA927F] text-s mb-16 tracking-[0.5em] uppercase">/var/log/experience</h2>
+      <div id="exp"></div>
+    </section>
+
+    <section id="certs" class="py-16 border-t border-white/5">
+      <h2 class="mono text-[#FA927F] text-s mb-16 tracking-[0.5em] uppercase">/verified_tokens</h2>
+      <div id="cert-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+    </section>
+
+    <section id="projects" class="py-16 border-t border-white/5">
+      <h2 class="mono text-[#FA927F] text-s mb-16 tracking-[0.5em] uppercase">/mnt/projects</h2>
+      <div id="project-rack" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+    </section>
+
+    <section id="education" class="py-16 border-t border-white/5">
+      <h2 class="mono text-[#FA927F] text-s mb-16 tracking-[0.5em] uppercase">/binary_origins</h2>
+      <div id="education-card" class="grid grid-cols-1 md:grid-cols-2 gap-10"></div>
+    </section>
+  </main>
+
+  <footer id="contact" class="py-16 border-t border-white/5 bg-[#080808]">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <div class="flex justify-center gap-8 mb-12">
+        <a href="https://github.com/therawbit" target="_blank"
+          class="p-4 bg-white/5 rounded-full hover:bg-[#FA927F] hover:text-black transition-all"><i
+            data-lucide="github"></i></a>
+        <a href="https://linkedin.com/in/sudarshandevkota/" target="_blank"
+          class="p-4 bg-white/5 rounded-full hover:bg-[#fdb3a7] hover:text-black transition-all"><i
+            data-lucide="linkedin"></i></a>
+        <a href="mailto:contact@sudarshandevkota.com.np"
+          class="p-4 bg-white/5 rounded-full hover:bg-white hover:text-black transition-all"><i
+            data-lucide="mail"></i></a>
+      </div>
+      <p class="mono text-[0.75rem] text-slate-500 tracking-[0.4em] uppercase">
+        &copy; 2026 Sudarshan Devkota <span class="mx-4 text-white/10">|</span> TheRawBit <span
+          class="mx-4 text-white/10">|</span> End_of_Line
       </p>
-    </footer>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
 
-    <script src="script.js"></script>
-  </body>
 </html>
-

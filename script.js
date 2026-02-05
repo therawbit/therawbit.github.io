@@ -1,11 +1,11 @@
 /**
- * 1. CONFIG & DATA
+ * 1. CONFIG & DATA (Original Data Restored)
  */
 const CONFIG = Object.freeze({
     FONT_SIZE: 14,
-    INTERVAL: 60, // Slightly slower for that retro terminal feel
-    MATRIX_COLOR: "#0891b2",
-    MATRIX_BG: "rgba(1, 2, 4, 0.15)",
+    INTERVAL: 64,
+    MATRIX_COLOR: "#FA927F",
+    MATRIX_BG: "rgba(5, 5, 5, 0.2)",
 });
 
 const DATA = {
@@ -41,216 +41,179 @@ const DATA = {
 };
 
 /**
- * 2. FLICKER-FREE MATRIX
+ * 2. KERNEL MATRIX EFFECT
  */
 const initKernelRain = () => {
     const canvas = document.getElementById('kernel-canvas');
     if (!canvas) return;
-
-    // Use alpha: false to prevent background bleeding flickering
     const ctx = canvas.getContext('2d', { alpha: false });
     let width, height, columns, drops;
-
     const setup = () => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
         columns = Math.floor(width / CONFIG.FONT_SIZE);
         drops = new Int32Array(columns).fill(1);
-
-        // Initial black fill to prevent white flash on load
-        ctx.fillStyle = "#010204";
-        ctx.fillRect(0, 0, width, height);
     };
-
     const draw = () => {
         ctx.fillStyle = CONFIG.MATRIX_BG;
         ctx.fillRect(0, 0, width, height);
-
         ctx.fillStyle = CONFIG.MATRIX_COLOR;
         ctx.font = `${CONFIG.FONT_SIZE - 2}px monospace`;
-
         for (let i = 0; i < drops.length; i++) {
             const char = Math.random() > 0.5 ? "0" : "1";
             ctx.fillText(char, i * CONFIG.FONT_SIZE, drops[i] * CONFIG.FONT_SIZE);
-
-            if (drops[i] * CONFIG.FONT_SIZE > height && Math.random() > 0.975) {
-                drops[i] = 0;
-            }
+            if (drops[i] * CONFIG.FONT_SIZE > height && Math.random() > 0.98) drops[i] = 0;
             drops[i]++;
         }
     };
-
     let lastTime = 0;
     const animate = (time) => {
-        if (time - lastTime > CONFIG.INTERVAL) {
-            draw();
-            lastTime = time;
-        }
+        if (time - lastTime > CONFIG.INTERVAL) { draw(); lastTime = time; }
         requestAnimationFrame(animate);
     };
-
-    window.addEventListener('resize', setup, { passive: true });
+    window.addEventListener('resize', setup);
     setup();
     requestAnimationFrame(animate);
 };
 
 /**
- * 3. UI RENDERING (Optimized for no-flicker)
+ * 3. UI RENDERING (Hierarchy Preserved)
  */
 const renderUI = () => {
-    const rack = document.getElementById('project-rack');
-    const certGrid = document.getElementById('cert-grid');
-     const exps = document.getElementById('exp');
-     const edu = document.getElementById('education-card');
-    const circuitSvg = `
-        <svg class="circuit-container" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-            <g class="circuit-path" fill="none" stroke="currentColor">
-                <path d="M10 10 H60 L80 30 H120 L140 10 H190 M10 140 H70 L90 120 H110 L130 140 H190 M30 0 V40 L50 60 V90 L30 110 V150 M170 0 V40 L150 60 V90 L170 110 V150" />
-            </g>
-        </svg>`;
+    const circuitSvg = `<svg class="circuit-container" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg"><g class="circuit-path" fill="none" stroke="currentColor"><path d="M10 10 H60 L80 30 H120 L140 10 H190 M10 140 H70 L90 120 H110 L130 140 H190 M30 0 V40 L50 60 V90 L30 110 V150 M170 0 V40 L150 60 V90 L170 110 V150" /></g></svg>`;
 
-
-    // Generate HTML strings
-    const projectsHTML = DATA.projects.map(p => `
-        <div class="module-card">
+    document.getElementById('project-rack').innerHTML = DATA.projects.map(p => `
+        <div class="module-card reveal">
             ${circuitSvg}
             <div class="relative z-10 flex justify-between items-start">
-                <div class="w-full"> 
-                    <p class="text-center mono text-[10px] text-cyan-600 tracking-[0.2em] uppercase font-bold">${p.type}</p>
-                    <h3 class="text-center w-full text-xl font-black text-white italic group-hover:text-cyan-400 mt-1">${p.name}</h3>
+                <div>
+                    <p class="mono text-[0.75rem] text-[#FA927F] font-bold uppercase opacity-60">${p.type}</p>
+                    <h3 class="text-xl font-bold text-white mt-1 italic">${p.name}</h3>
                 </div>
                 <a href="${p.github}" target="_blank"><i data-lucide="github" class="github-icon-large"></i></a>
             </div>
-            <div class="relative z-10 mt-4">
-                <p class="text-center text-slate-500 text-[12px] leading-relaxed mb-3 text-justify">${p.desc}</p>
-                <div class="flex justify-between items-center border-t border-cyan-900/20 pt-2">
-                    <span class="mono text-[10px] text-cyan-700 font-bold tracking-widest">${p.tech}</span>
-                </div>
+            <p class="relative z-10 project-desc mt-4 mb-4 text-justify line-clamp-3">${p.desc}</p>
+            <div class="relative z-10 border-t border-white/5 pt-3">
+                <span class="mono text-[0.75rem] text-[#fdb3a7] font-bold uppercase">${p.tech}</span>
             </div>
         </div>`).join('');
 
-const certsHTML = DATA.certs.map(c => `
-    <div class="cert-card group border border-cyan-500 p-4 hover:bg-cyan-500/5 cursor-pointer" onclick="openModal('${c.imagePath}')">
-        <div class="flex justify-between items-start mb-6">
-            <i data-lucide="shield-check" class="text-cyan-500 w-5 h-5"></i>
-            <span class="mono text-[10px] text-slate-300">${c.id}</span>
-        </div>
-        <h4 class="text-white font-bold text-sm tracking-tight mb-1 uppercase group-hover:text-cyan-400">${c.title}</h4>
-        <p class="mono text-[12px] text-slate-300 mb-2">${c.issuer}</p>
-        <p class="mono text-[12px] text-slate-300 mb-6">${c.date}</p>  
-        <div class="flex items-center gap-2 text-[10px] text-cyan-400/50 mono font-bold">
-            <i data-lucide="eye" class="w-3 h-3"></i> CLICK_TO_VIEW_CREDENTIAL
-        </div>
-    </div>`).join('');
-
-    const experienceHTML = DATA.experiences.map((ex, i) => {return`
-        <div class="log-entry relative pl-12">
-            <div class="absolute left-0 top-0 text-cyan-900 mono text-xl font-bold italic">${i}</div>
-            <div class="absolute left-4 top-2 bottom-0 w-[1px] bg-gradient-to-b from-cyan-500 to-transparent">
+    document.getElementById('cert-grid').innerHTML = DATA.certs.map(c => `
+        <div class="cert-card reveal group" onclick="openModal('${c.imagePath}')">
+            <div class="flex justify-between items-start mb-6">
+                <div class="p-2 bg-[#FA927F]/5 border border-[#FA927F]/10 rounded-sm"><i data-lucide="shield-check" class="text-[#FA927F] w-4 h-4"></i></div>
+                <span class="mono text-[0.6rem] text-slate-500 font-bold">${c.id}</span>
             </div>
-            <h4 class="text-2xl font-bold text-white uppercase tracking-tighter">${ex.title}</h4>
-            <h2 class="text-cyan-500 text-l mono"> ${ex.organization}</h2>
-            <p class="text-slate-400 mono text-[12px] mb-4">${ex.startDate} - ${ex.endDate}</p>
-            <p class="text-slate-600 max-w-xl">${ex.desc}</p>
-        </div>`
-    }).join('');
+            <h4 class="text-white font-bold text-sm mb-2 uppercase group-hover:text-[#FA927F] transition-colors">${c.title}</h4>
+            <div class="space-y-1 mb-6">
+                <p class="mono text-[0.8rem] text-slate-400 font-medium">${c.issuer}</p>
+                <p class="mono text-[0.75rem] text-slate-600 italic">${c.date}</p>
+            </div>
+            <div class="flex items-center gap-2 text-[0.75rem] text-[#fdb3a7] mono font-black tracking-widest opacity-60">
+                <i data-lucide="eye" class="w-3 h-3"></i> VERIFY_CREDENTIAL
+            </div>
+        </div>`).join('');
 
-    const educationHTML = DATA.education.map((edu, i) => {return `
-        <div class="edu-node p-8 border border-cyan-900/30 bg-cyan-950/5 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
-                        <i data-lucide="graduation-cap" class="w-24 h-24"></i>
-                    </div>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="h-12 w-1 bg-cyan-500"></div>
-                        <div>
-                            <h3 class="text-white font-black text-xl tracking-tighter">${edu.title}</h3>
-                            <p class="momnt no text-l text-cyan-600">${edu.organization}</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 mono text-[11px] text-slate-400">
-                        <span>[ STATUS: ${edu.status} ]</span>
-                        <span>[ BATCH: ${edu.batch} ]</span>
-                    </div>
+    document.getElementById('exp').innerHTML = DATA.experiences.map((ex, i) => `
+        <div class="reveal relative pl-16 pb-12 border-l border-white/5 last:border-0">
+            <div class="absolute -left-[1px] top-0 w-px h-24 bg-gradient-to-b from-[#FA927F] to-transparent"></div>
+            <div class="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#FA927F] shadow-[0_0_12px_#FA927F]"></div>
+            <span class="absolute left-6 top-0 log-entry-number mono">${String(i).padStart(2, '0')}</span>
+            <div class="pt-8">
+                <h4 class="text-2xl font-black text-white uppercase tracking-tighter mb-1">${ex.title}</h4>
+                <p class="text-[#FA927F] mono text-sm font-bold mb-3 uppercase tracking-widest">${ex.organization}</p>
+                <p class="text-slate-500 mono text-[0.8rem] mb-4 font-bold tracking-tight">[ ${ex.startDate} — ${ex.endDate} ]</p>
+                <p class="exp-desc max-w-2xl">${ex.desc}</p>
+            </div>
+        </div>`).join('');
+
+    document.getElementById('education-card').innerHTML = DATA.education.map(edu => `
+        <div class="reveal p-8 border border-white/5 bg-white/[0.02] backdrop-blur-sm relative overflow-hidden group hover:border-[#FA927F]/30 transition-all duration-500">
+            <div class="flex items-center gap-5 mb-6">
+                <div class="h-10 w-1 bg-[#FA927F] shadow-[0_0_0.75rem_rgba(250,146,127,0.5)]"></div>
+                <div>
+                    <h3 class="text-white font-bold text-lg uppercase tracking-tight">${edu.title}</h3>
+                    <p class="mono text-xs text-[#fdb3a7] font-bold opacity-80 uppercase">${edu.organization}</p>
                 </div>
-        `
-    }).join('');
-        
-    
+            </div>
+            <div class="flex gap-6 mono text-[0.75rem] text-slate-500 font-bold tracking-widest uppercase">
+                <span>STATUS: ${edu.status}</span>
+                <span>BATCH: ${edu.batch}</span>
+            </div>
+        </div>`).join('');
 
-   
-    
-
-    // Batch DOM updates using RequestAnimationFrame to prevent layout thrashing
-    requestAnimationFrame(() => {
-        if (rack) rack.innerHTML = projectsHTML;
-        if (certGrid) certGrid.innerHTML = certsHTML;
-        exps.innerHTML = experienceHTML;
-        edu.innerHTML = educationHTML;
-        lucide.createIcons();
-    });
+    lucide.createIcons();
+    initRevealObserver();
 };
-// Mobile Menu Toggle logic
-const menuBtn = document.getElementById('menu-btn');
-const navLinks = document.getElementById('nav-links');
 
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('hidden');
-    navLinks.classList.toggle('flex');
-    
-    // Change icon between Menu and X if you want
-    const icon = menuBtn.querySelector('i');
-    if (navLinks.classList.contains('hidden')) {
-        icon.setAttribute('data-lucide', 'menu');
-    } else {
-        icon.setAttribute('data-lucide', 'x');
+/**
+ * 4. HAMBURGER MENU FIX & MODAL
+ */
+/**
+ * 4. HAMBURGER MENU FIX & MODAL
+ */
+const initInteractions = () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = navLinks.classList.toggle('mobile-active');
+            
+            if (isActive) {
+                navLinks.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; 
+            } else {
+                navLinks.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close menu when a link is clicked
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(l => {
+            l.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-active');
+                navLinks.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close menu if clicking outside the nav area
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('mobile-active') && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('mobile-active');
+                navLinks.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
     }
-    lucide.createIcons(); // Re-render Lucide icons
-});
 
-// Close menu when a link is clicked
-document.querySelectorAll('#nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-            navLinks.classList.add('hidden');
-            navLinks.classList.remove('flex');
-            menuBtn.querySelector('i').setAttribute('data-lucide', 'menu');
-            lucide.createIcons();
-        }
-    });
-});
-
-/* --- MODAL LOGIC --- */
-// 1. Create Modal Element once
-const modalHtml = `
-    <div id="cert-modal" onclick="closeModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="modal-close mono">[ ESC / CLICK OUTSIDE TO CLOSE ]</span>
-            <img id="modal-img" src="" alt="Certificate" style="display: block; max-width: 100%; max-height: 80vh;">
-        </div>
-    </div>
-`;
-document.body.insertAdjacentHTML('beforeend', modalHtml);
-
-// 2. Open/Close Functions
-window.openModal = (imgSrc) => {
-    if(!imgSrc || imgSrc === 'undefined') return;
-    const modal = document.getElementById('cert-modal');
-    const img = document.getElementById('modal-img');
-        img.onload = () => {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; 
-    };
-    
-    img.src = imgSrc;
+    const modalHtml = `<div id="cert-modal" onclick="closeModal()"><div class="modal-content" onclick="event.stopPropagation()"><span class="modal-close mono">[ CLICK_OUTSIDE_TO_EXIT ]</span><img id="modal-img" src="" alt="Certificate" class="block max-w-full max-h-[80vh] object-contain"></div></div>`;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
 };
 
-window.closeModal = () => {
+// Global Helpers
+window.openModal = (imgSrc) => {
     const modal = document.getElementById('cert-modal');
-    modal.classList.remove('active');
+    document.getElementById('modal-img').src = imgSrc;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; 
+};
+window.closeModal = () => {
+    document.getElementById('cert-modal').classList.remove('active');
     document.body.style.overflow = 'auto';
 };
 
-document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeModal(); });
-// Start everything immediately
-initKernelRain();
-renderUI();
+const initRevealObserver = () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = "1"; entry.target.style.transform = "translateY(0)"; } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => {
+        el.style.opacity = "0"; el.style.transform = "translateY(30px)"; el.style.transition = "all 0.8s cubic-bezier(0.23, 1, 0.32, 1)";
+        observer.observe(el);
+    });
+};
+
+document.addEventListener('DOMContentLoaded', () => { initKernelRain(); initInteractions(); renderUI(); });
