@@ -13,30 +13,30 @@ const DATA = {
         { name: "Secware", type: "SYS_SEC", desc: "A sophisticated desktop application designed to watch for changes in a selected folder. It detects the occurrence of any Windows executables, disassembles the sample, and feeds it to a pre-trained machine learning model for classification and notify the user.", tech: "Python / Bash", github: "https://github.com/therawbit/secware" },
         { name: "Query-Us", type: "SYS_DEV", desc: "Backend API for a Discussion Forum Application made using Spring Boot and PostgreSQL.The features include the ability to ask questions and post answers, perform a full text search using tags and text, upvoting system, and question views count.", tech: "Spring Boot / React", github: "https://github.com/therawbit/QueryUs" },
         { name: "Hyprland config", type: "SYS_ETC", desc: "A Arch Linux configuration designed to automate the configuration of a Hyprland-based desktop environment", tech: "Bash / Lua / Config", github: "https://github.com/therawbit/dotfiles" },
-        { name: "Budget On", type: "SYS_APK", desc: "Full Stack expense tracker application created using Java. Backend is built using the Spring-Boot and front end is a native Android application.", tech:"Spring Boot / Android", github: "https://github.com/therawbit/Budget-On"},
-        { name: "iOrder", type: "SYS_APK", desc: "Android application created as a project for KU Hackfest 2022. It can be implemented by restaurant to allow their customers to order their foods with their own device by scanning the QR code placed at the table.", tech: "Java / Andriod", github: "https://github.com/therawbit/iOrder"},
-        { name: "YT-MP3", type: "SYS_DEV", desc: "A command line utility built on Python to download youtube videos as mp3 file. It is capable of downloading either a Single video or the whole Playlist based on the link you provide.", tech:"Python", github:"https://github.com/therawbit/YT-Mp3" },
+        { name: "Budget On", type: "SYS_APK", desc: "Full Stack expense tracker application created using Java. Backend is built using the Spring-Boot and front end is a native Android application.", tech: "Spring Boot / Android", github: "https://github.com/therawbit/Budget-On" },
+        { name: "iOrder", type: "SYS_APK", desc: "Android application created as a project for KU Hackfest 2022. It can be implemented by restaurant to allow their customers to order their foods with their own device by scanning the QR code placed at the table.", tech: "Java / Andriod", github: "https://github.com/therawbit/iOrder" },
+        { name: "YT-MP3", type: "SYS_DEV", desc: "A command line utility built on Python to download youtube videos as mp3 file. It is capable of downloading either a Single video or the whole Playlist based on the link you provide.", tech: "Python", github: "https://github.com/therawbit/YT-Mp3" },
     ],
     certs: [
-        { title: "Certified Network Security Practitioner", issuer: "The SecOps Group ( Creators of PentestingExams.com )", id: "9455749", date: "December 2024", link:"#", imagePath: "./certificates/cnsp.jpg"},
-        { title: "Certified Cyber Security Analyst (C3SA)", issuer: "CyberWarFare Labs", id: "2e0359d2", date: "April 2024", link:"#", imagePath: "./certificates/c3sa.jpg"},
-        { title: "Gajabaar Infosecurity Mentorship", issuer: "Gajabaar", id: "GB2023001", date: "April 2024",link: "#", imagePath: "./certificates/gajabaar.jpg"},
-        { title: "Certified AppSec Practitioner ( CAP )", issuer: "The SecOps Group ( Creators of PentestingExams.com )", id: "7967136", date: "October 2023" , imagePath: "./certificates/cap.jpg"},
-        { title: "AWS Academy Graduate - AWS Academy Cloud Foundations", issuer: "Amazon Web Services (AWS)", id: "", date: "August 2023", imagePath: "./certificates/aws.jpg"}
+        { title: "Certified Network Security Practitioner", issuer: "The SecOps Group ( Creators of PentestingExams.com )", id: "9455749", date: "December 2024", link: "#", imagePath: "./certificates/cnsp.jpg" },
+        { title: "Certified Cyber Security Analyst (C3SA)", issuer: "CyberWarFare Labs", id: "2e0359d2", date: "April 2024", link: "#", imagePath: "./certificates/c3sa.jpg" },
+        { title: "Gajabaar Infosecurity Mentorship", issuer: "Gajabaar", id: "GB2023001", date: "April 2024", link: "#", imagePath: "./certificates/gajabaar.jpg" },
+        { title: "Certified AppSec Practitioner ( CAP )", issuer: "The SecOps Group ( Creators of PentestingExams.com )", id: "7967136", date: "October 2023", imagePath: "./certificates/cap.jpg" },
+        { title: "AWS Academy Graduate - AWS Academy Cloud Foundations", issuer: "Amazon Web Services (AWS)", id: "", date: "August 2023", imagePath: "./certificates/aws.jpg" }
     ],
     experiences: [
         { title: "Software Engineer I ● Product Development", organization: "Smart Data Solutions", startDate: "July 2025", endDate: "Present", desc: "" },
-        { title: "Full-stack Java Developer", organization: "Smart Data Solutions", startDate: "February 2025", endDate: "July 2025" ,desc :""},
-        { title: "Java Software Engineer", organization: "UGRO Capital / Code Himalaya ", startDate: "June 2024", endDate: "February 2025", desc:""},
-        { title: "Junior Java Developer", organization: "Code Himalaya Pvt. Ltd", startDate: "May 2024", endDate: "February 2025", desc:""},
-        { title: "Java Developer Intern", organization: "Dakshya A.I", startDate: "July 2023", endDate: "October 2023", desc:""},
+        { title: "Full-stack Java Developer", organization: "Smart Data Solutions", startDate: "February 2025", endDate: "July 2025", desc: "" },
+        { title: "Java Software Engineer", organization: "UGRO Capital / Code Himalaya ", startDate: "June 2024", endDate: "February 2025", desc: "" },
+        { title: "Junior Java Developer", organization: "Code Himalaya Pvt. Ltd", startDate: "May 2024", endDate: "February 2025", desc: "" },
+        { title: "Java Developer Intern", organization: "Dakshya A.I", startDate: "July 2023", endDate: "October 2023", desc: "" },
 
     ],
-    education:[
-        { title:"Bachelors ( Computer Engineering ) ", organization:"Tribhuvan University // IOE // WRC", status:"Deployed", batch:"2019-2024"},
-        { title:"High School", organization:"Gandaki Boarding School ( GBS )", status:"Deployed", batch:"2017-2019"},
-        { title:"School", organization:"Pokhara Academy", status:"Deployed", batch:"2003-2016"}
-   
+    education: [
+        { title: "Bachelors ( Computer Engineering ) ", organization: "Tribhuvan University // IOE // WRC", status: "Deployed", batch: "2019-2024" },
+        { title: "High School", organization: "Gandaki Boarding School ( GBS )", status: "Deployed", batch: "2017-2019" },
+        { title: "School", organization: "Pokhara Academy", status: "Deployed", batch: "2003-2016" }
+
     ]
 };
 
@@ -90,7 +90,9 @@ const renderUI = () => {
                     <p class="mono text-[0.75rem] text-[#FA927F] font-bold uppercase opacity-60">${p.type}</p>
                     <h3 class="text-xl font-bold text-white mt-1 italic">${p.name}</h3>
                 </div>
-                <a href="${p.github}" target="_blank"><i data-lucide="github" class="github-icon-large"></i></a>
+                <a href="${p.github}" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="github-icon-large"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
             </div>
             <p class="relative z-10 project-desc mt-4 mb-4 text-justify line-clamp-3">${p.desc}</p>
             <div class="relative z-10 border-t border-white/5 pt-3">
@@ -101,7 +103,9 @@ const renderUI = () => {
     document.getElementById('cert-grid').innerHTML = DATA.certs.map(c => `
         <div class="cert-card reveal group" onclick="openModal('${c.imagePath}')">
             <div class="flex justify-between items-start mb-6">
-                <div class="p-2 bg-[#FA927F]/5 border border-[#FA927F]/10 rounded-sm"><i data-lucide="shield-check" class="text-[#FA927F] w-4 h-4"></i></div>
+                <div class="p-2 bg-[#FA927F]/5 border border-[#FA927F]/10 rounded-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#FA927F] w-4 h-4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+                </div>
                 <span class="mono text-[0.6rem] text-slate-500 font-bold">${c.id}</span>
             </div>
             <h4 class="text-white font-bold text-sm mb-2 uppercase group-hover:text-[#FA927F] transition-colors">${c.title}</h4>
@@ -110,7 +114,7 @@ const renderUI = () => {
                 <p class="mono text-[0.75rem] text-slate-600 italic">${c.date}</p>
             </div>
             <div class="flex items-center gap-2 text-[0.75rem] text-[#fdb3a7] mono font-black tracking-widest opacity-60">
-                <i data-lucide="eye" class="w-3 h-3"></i> VERIFY_CREDENTIAL
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg> VERIFY_CREDENTIAL
             </div>
         </div>`).join('');
 
@@ -142,7 +146,6 @@ const renderUI = () => {
             </div>
         </div>`).join('');
 
-    lucide.createIcons();
     initRevealObserver();
 };
 
@@ -160,10 +163,10 @@ const initInteractions = () => {
         menuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             const isActive = navLinks.classList.toggle('mobile-active');
-            
+
             if (isActive) {
                 navLinks.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; 
+                document.body.style.overflow = 'hidden';
             } else {
                 navLinks.classList.add('hidden');
                 document.body.style.overflow = 'auto';
@@ -199,7 +202,7 @@ window.openModal = (imgSrc) => {
     const modal = document.getElementById('cert-modal');
     document.getElementById('modal-img').src = imgSrc;
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; 
+    document.body.style.overflow = 'hidden';
 };
 window.closeModal = () => {
     document.getElementById('cert-modal').classList.remove('active');

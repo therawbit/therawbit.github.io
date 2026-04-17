@@ -28,17 +28,6 @@ body {
     font-size: 1rem;
 }
 
-/* Grain Overlay for Cinematic Texture */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity: 0.04;
-    pointer-events: none;
-    z-index: 999;
-}
-
 /* Radial Vignette for Depth */
 body::after {
     content: "";

@@ -9,7 +9,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     html {
       scroll-padding-top: 5rem;
@@ -34,7 +33,12 @@
     </div>
 
     <button id="menu-btn" class="md:hidden text-[#FA927F] relative z-[201]">
-      <i data-lucide="menu"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="6" x2="20" y2="6"></line>
+        <line x1="4" y1="18" x2="20" y2="18"></line>
+      </svg>
     </button>
 
     <div id="nav-links" class="hidden md:flex items-center gap-10 text-[#cbd5e1]">
@@ -89,117 +93,167 @@
         </div>
       </div>
     </section>
-<section id="skills" class="py-24 border-t border-white/5">
-  <div class="flex items-center gap-4 mb-16">
-    <h2 class="mono text-[#FA927F] text-sm tracking-[0.5em] uppercase">/usr/bin/capabilities</h2>
-    <div class="h-px flex-grow bg-gradient-to-r from-[#FA927F]/30 to-transparent"></div>
-  </div>
-
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-    <div class="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#FA927F]/30 transition-all duration-500 overflow-hidden">
-      <div class="absolute top-0 right-0 p-4 mono text-[0.6rem] text-white/10 group-hover:text-[#FA927F]/20 transition-colors">
-        MOD_01</div>
-
-      <div class="flex items-center gap-4 mb-8">
-        <div class="p-3 bg-[#FA927F]/10 rounded-xl text-[#FA927F] group-hover:scale-110 transition-transform">
-          <i data-lucide="cpu" class="w-6 h-6"></i>
-        </div>
-        <h3 class="text-white text-xl font-black italic tracking-tight uppercase">Build_Env</h3>
+    <section id="skills" class="py-24 border-t border-white/5">
+      <div class="flex items-center gap-4 mb-16">
+        <h2 class="mono text-[#FA927F] text-sm tracking-[0.5em] uppercase">/usr/bin/capabilities</h2>
+        <div class="h-px flex-grow bg-gradient-to-r from-[#FA927F]/30 to-transparent"></div>
       </div>
 
-      <div class="space-y-8">
-        <div>
-          <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Core_Ecosystem</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Java</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Spring Boot</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Hibernate</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Node.js</span>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <div
+          class="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#FA927F]/30 transition-all duration-500 overflow-hidden">
+          <div
+            class="absolute top-0 right-0 p-4 mono text-[0.6rem] text-white/10 group-hover:text-[#FA927F]/20 transition-colors">
+            MOD_01</div>
+
+          <div class="flex items-center gap-4 mb-8">
+            <div class="p-3 bg-[#FA927F]/10 rounded-xl text-[#FA927F] group-hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <rect x="9" y="9" width="6" height="6"></rect>
+                <path d="M15 2v2"></path>
+                <path d="M15 20v2"></path>
+                <path d="M2 15h2"></path>
+                <path d="M2 9h2"></path>
+                <path d="M20 15h2"></path>
+                <path d="M20 9h2"></path>
+                <path d="M9 2v2"></path>
+                <path d="M9 20v2"></path>
+              </svg>
+            </div>
+            <h3 class="text-white text-xl font-black italic tracking-tight uppercase">Build_Env</h3>
+          </div>
+
+          <div class="space-y-8">
+            <div>
+              <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Core_Ecosystem</p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Java</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Spring
+                  Boot</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Hibernate</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Node.js</span>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Architecture_&_Data</p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">PostgreSQL</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Redis</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Kafka</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Android</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div>
-          <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Architecture_&_Data</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">PostgreSQL</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Redis</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Kafka</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Android</span>
+        <div
+          class="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#FA927F]/30 transition-all duration-500 overflow-hidden">
+          <div
+            class="absolute top-0 right-0 p-4 mono text-[0.6rem] text-white/10 group-hover:text-[#FA927F]/20 transition-colors">
+            MOD_02</div>
+
+          <div class="flex items-center gap-4 mb-8">
+            <div class="p-3 bg-[#FA927F]/10 rounded-xl text-[#FA927F] group-hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+            </div>
+            <h3 class="text-white text-xl font-black italic tracking-tight uppercase">Script_&_Web</h3>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#FA927F]/30 transition-all duration-500 overflow-hidden">
-      <div class="absolute top-0 right-0 p-4 mono text-[0.6rem] text-white/10 group-hover:text-[#FA927F]/20 transition-colors">
-        MOD_02</div>
+          <div class="space-y-8">
+            <div>
+              <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Web_Interface</p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Next.js</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">React</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Tailwind</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">TypeScript</span>
+              </div>
+            </div>
 
-      <div class="flex items-center gap-4 mb-8">
-        <div class="p-3 bg-[#FA927F]/10 rounded-xl text-[#FA927F] group-hover:scale-110 transition-transform">
-          <i data-lucide="terminal" class="w-6 h-6"></i>
-        </div>
-        <h3 class="text-white text-xl font-black italic tracking-tight uppercase">Script_&_Web</h3>
-      </div>
-
-      <div class="space-y-8">
-        <div>
-          <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Web_Interface</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Next.js</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">React</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Tailwind</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">TypeScript</span>
-          </div>
-        </div>
-
-        <div>
-          <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Logic_Automation</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Python</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Bash</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Linux (Arch)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#fdb3a7]/30 transition-all duration-500 overflow-hidden">
-      <div class="absolute top-0 right-0 p-4 mono text-[0.6rem] text-white/10 group-hover:text-[#fdb3a7]/20 transition-colors">
-        MOD_03</div>
-
-      <div class="flex items-center gap-4 mb-8">
-        <div class="p-3 bg-[#fdb3a7]/10 rounded-xl text-[#fdb3a7] group-hover:scale-110 transition-transform">
-          <i data-lucide="shield-check" class="w-6 h-6"></i>
-        </div>
-        <h3 class="text-white text-xl font-black italic tracking-tight uppercase">Audit_&_Infra</h3>
-      </div>
-
-      <div class="space-y-8">
-        <div>
-          <p class="text-[0.65rem] mono text-[#fdb3a7] mb-3 uppercase tracking-[0.2em]">AppSec_&_RE</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Burp Suite</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Ghidra</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">JADX</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Static Analysis</span>
+            <div>
+              <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Logic_Automation</p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Python</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Bash</span>
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Linux
+                  (Arch)</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div>
-          <p class="text-[0.65rem] mono text-[#fdb3a7] mb-3 uppercase tracking-[0.2em]">DevOps_Environment</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Docker</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Jenkins</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">CI/CD</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Nginx</span>
+        <div
+          class="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#fdb3a7]/30 transition-all duration-500 overflow-hidden">
+          <div
+            class="absolute top-0 right-0 p-4 mono text-[0.6rem] text-white/10 group-hover:text-[#fdb3a7]/20 transition-colors">
+            MOD_03</div>
+
+          <div class="flex items-center gap-4 mb-8">
+            <div class="p-3 bg-[#fdb3a7]/10 rounded-xl text-[#fdb3a7] group-hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="text-white text-xl font-black italic tracking-tight uppercase">Audit_&_Infra</h3>
+          </div>
+
+          <div class="space-y-8">
+            <div>
+              <p class="text-[0.65rem] mono text-[#fdb3a7] mb-3 uppercase tracking-[0.2em]">AppSec_&_RE</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Burp
+                  Suite</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Ghidra</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">JADX</span>
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Static
+                  Analysis</span>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-[0.65rem] mono text-[#fdb3a7] mb-3 uppercase tracking-[0.2em]">DevOps_Environment</p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Docker</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Jenkins</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">CI/CD</span>
+                <span
+                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Nginx</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-  </div>
-</section>
+      </div>
+    </section>
 
     <section id="exps" class="py-16 border-t border-white/5">
       <h2 class="mono text-[#FA927F] text-s mb-16 tracking-[0.5em] uppercase">/var/log/experience</h2>
@@ -226,14 +280,31 @@
     <div class="max-w-6xl mx-auto px-6 text-center">
       <div class="flex justify-center gap-8 mb-12">
         <a href="https://github.com/therawbit" target="_blank"
-          class="p-4 bg-white/5 rounded-full hover:bg-[#FA927F] hover:text-black transition-all"><i
-            data-lucide="github"></i></a>
+          class="p-4 bg-white/5 rounded-full hover:bg-[#FA927F] hover:text-black transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+            </path>
+          </svg>
+        </a>
         <a href="https://linkedin.com/in/sudarshandevkota/" target="_blank"
-          class="p-4 bg-white/5 rounded-full hover:bg-[#fdb3a7] hover:text-black transition-all"><i
-            data-lucide="linkedin"></i></a>
+          class="p-4 bg-white/5 rounded-full hover:bg-[#fdb3a7] hover:text-black transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
         <a href="mailto:contact@sudarshandevkota.com.np"
-          class="p-4 bg-white/5 rounded-full hover:bg-white hover:text-black transition-all"><i
-            data-lucide="mail"></i></a>
+          class="p-4 bg-white/5 rounded-full hover:bg-white hover:text-black transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+        </a>
       </div>
       <p class="mono text-[0.75rem] text-slate-500 tracking-[0.4em] uppercase">
         &copy; 2026 Sudarshan Devkota <span class="mx-4 text-white/10">|</span> TheRawBit <span
