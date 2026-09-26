@@ -1,318 +1,246 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>#!/bin/TheRawBit</title>
-  <meta name="description" content="Portfolio of Sudarshan Devkota (TheRawBit). Computer Engineer & Java Specialist." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>TheRawBit — Sudarshan Devkota · Full-Stack &amp; Security Engineer</title>
+  <meta name="description"
+    content="Sudarshan Devkota (TheRawBit). Full-stack engineer — Spring Boot cores, React &amp; Android surfaces, cloud &amp; Linux infra — and application/network security practitioner. Kathmandu, Nepal." />
+  <meta name="author" content="Sudarshan Devkota" />
+  <meta property="og:title" content="TheRawBit — Sudarshan Devkota" />
+  <meta property="og:description" content="I build the system, then I break it." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://therawbit.github.io" />
+  <meta property="og:image" content="./favicon.png" />
+  <meta name="theme-color" content="#0a0a0c" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    html {
-      scroll-padding-top: 5rem;
-    }
-  </style>
 </head>
 
-<body class="selection:bg-[#FA927F] selection:text-black bg-[#050505]">
-  <canvas id="kernel-canvas" class="fixed inset-0 z-[-10] pointer-events-none opacity-25"></canvas>
+<body>
+  <div class="vignette" aria-hidden="true"></div>
 
-  <nav
-    class="fixed top-0 w-full z-[100] border-b border-[#FA927F]/10 bg-[#050505]/80 backdrop-blur-xl px-8 py-4 flex justify-between items-center font-mono text-[0.75rem] uppercase">
-    <div class="flex items-center gap-6 text-[#FA927F]">
-      <div class="flex items-center gap-2">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FA927F] opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#FA927F]"></span>
-        </span>
-        <span class="font-bold tracking-tighter">therawbit@root#</span>
-      </div>
-      <span class="hidden lg:inline text-[#fdb3a7]/70 font-medium">Role: Java_AppSec_Engineer</span>
+  <!-- ═══ BACKGROUND DATAFLOW — circuit tiled across the whole page, built by main.js ═══ -->
+  <svg id="dataflow" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+
+  <!-- inline monoline icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-star" viewBox="0 0 16 16"><path d="M8 1.6l1.9 4 4.3.6-3.1 3 .8 4.3L8 11.4l-3.9 2.1.8-4.3-3.1-3 4.3-.6z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+      <symbol id="i-fork" viewBox="0 0 16 16"><circle cx="4" cy="3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="13" r="1.7" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M4 4.7v1.6c0 1.4 1.1 2.5 2.5 2.5h3c1.4 0 2.5-1.1 2.5-2.5V4.7M8 8.8v2.5" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+      <symbol id="i-code" viewBox="0 0 16 16"><path d="M5.5 4L1.5 8l4 4M10.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 16 16"><path d="M8 1.5l5 2v4c0 3.6-2.4 6-5 7-2.6-1-5-3.4-5-7v-4z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5.6 7.8L7.3 9.5l3.2-3.3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-server" viewBox="0 0 16 16"><rect x="2" y="2.5" width="12" height="5" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="2" y="9" width="12" height="5" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5" r=".7" fill="currentColor"/><circle cx="5" cy="11.5" r=".7" fill="currentColor"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 16 16"><path d="M4.5 12.5a3 3 0 01-.4-5.96A4 4 0 0111.7 7a3 3 0 01-.2 5.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 16 16"><rect x="1.5" y="2.5" width="13" height="11" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M4 6l2.5 2L4 10M8.5 11h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 16 16"><rect x="3.5" y="7" width="9" height="6.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="10.2" r="1" fill="currentColor"/></symbol>
+      <symbol id="i-link" viewBox="0 0 16 16"><path d="M6.5 9.5l3-3M7.5 4.5l1-1a2.8 2.8 0 014 4l-1 1M8.5 11.5l-1 1a2.8 2.8 0 01-4-4l1-1" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></symbol>
+      <symbol id="i-blog" viewBox="0 0 16 16"><path d="M2 4.5A2.5 2.5 0 014.5 2H14v10.5a1.5 1.5 0 01-1.5 1.5H4.5A2.5 2.5 0 012 11.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5 5.5h6M5 8h6M5 10.5h3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 16 16"><path d="M8 14.5s5-4.4 5-8a5 5 0 10-10 0c0 3.6 5 8 5 8z" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="6.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+      <symbol id="i-grad" viewBox="0 0 16 16"><path d="M1.5 6L8 3l6.5 3L8 9z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4 7.3v3.4c0 1.3 7.9 1.3 7.9 0V7.3M13.5 7v4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 16 16"><rect x="1.5" y="3" width="13" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M2 4l6 5 6-5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+      <symbol id="i-ctf" viewBox="0 0 16 16"><path d="M8 1.8L3 4v3.5c0 3.7 2.1 6 5 7.2 2.9-1.2 5-3.5 5-7.2V4z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M5.8 8h4.4M8 5.8v4.4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ═══ BOOT ═══ -->
+  <div id="boot" aria-hidden="true">
+    <div class="boot-inner">
+      <p class="boot-line mono"><span class="boot-prompt">therawbit@root:~$</span> <span id="boot-cmd">init portfolio</span><span class="caret"></span></p>
+      <div class="boot-meter"><i id="boot-meter-fill"></i></div>
     </div>
+  </div>
 
-    <button id="menu-btn" class="md:hidden text-[#FA927F] relative z-[201]">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" y1="12" x2="20" y2="12"></line>
-        <line x1="4" y1="6" x2="20" y2="6"></line>
-        <line x1="4" y1="18" x2="20" y2="18"></line>
+  <!-- ═══ NAV ═══ -->
+  <header id="nav">
+    <a class="brand" href="#top" aria-label="TheRawBit home">
+      <svg viewBox="0 0 44 40" class="brand-mark" aria-hidden="true">
+        <rect x="2" y="2" width="26" height="7" rx="1" />
+        <rect x="2" y="11" width="30" height="7" rx="1" />
+        <rect x="5" y="20" width="24" height="7" rx="1" />
+        <rect x="14" y="29" width="22" height="7" rx="1" />
       </svg>
-    </button>
+      <span class="brand-word mono">therawbit</span>
+    </a>
+    <nav class="nav-links mono" id="nav-links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#trajectory">Trajectory</a>
+      <a href="#credentials">Credentials</a>
+      <a href="https://blog.sudarshandevkota.com.np" target="_blank" rel="noopener" class="nav-blog"><svg class="i"><use href="#i-blog" /></svg> Blog</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button id="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
 
-    <div id="nav-links" class="hidden md:flex items-center gap-10 text-[#cbd5e1]">
-      <a href="#certs" class="hover:text-[#FA927F] transition-all">/certs</a>
-      <a href="#skills" class="hover:text-[#FA927F] transition-all">/skills</a>
-      <a href="#exps" class="hover:text-[#FA927F] transition-all">/logs</a>
-      <a href="https://blog.sudarshandevkota.com.np" target="_blank"
-        class="px-4 py-1 border border-[#FA927F]/20 rounded-full hover:bg-[#FA927F] hover:text-black transition-all">/dev/blog</a>
-    </div>
-  </nav>
-
-  <main class="max-w-6xl mx-auto px-6">
-    <section id="home" class="min-h-screen flex flex-col justify-center pt-20">
-      <div class="max-w-5xl">
-        <div
-          class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-[#FA927F]/20 bg-[#FA927F]/5 mb-10">
-          <span
-            class="mono text-[0.75rem] text-[#FA927F] tracking-[0.3em] font-bold uppercase">Kernel_v5.15.0-verified</span>
-        </div>
-
-        <h1
-          class="text-6xl sm:text-7xl md:text-8xl lg:text-[150px] font-black text-white tracking-tighter leading-[0.85] mb-8 select-none uppercase">
-          THE<span
-            class="text-transparent bg-clip-text bg-gradient-to-tr from-[#FA927F] via-[#fdb3a7] to-white">RAW</span>BIT
+  <main id="top">
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="hero">
+      <div class="hero-copy">
+        <p class="kicker mono reveal-line"><span>Full-Stack Engineer · Cloud · Linux · NetSec</span></p>
+        <h1 class="hero-title">
+          <span class="reveal-line"><span>Sudarshan</span></span>
+          <span class="reveal-line"><span>Devkota<span class="accent-dot">.</span></span></span>
         </h1>
-
-        <div class="mono text-slate-400 text-sm md:text-lg space-y-3 mb-12 border-l border-[#FA927F]/30 pl-8">
-          <p class="typewriter inline-block text-[#FA927F]">$ whoami</p>
-          <h2 class="text-white text-2xl md:text-3xl font-bold tracking-tight">
-            Sudarshan Devkota <span class="text-[#fdb3a7]/50 font-light">// Engineer</span>
-          </h2>
-          <p class="text-slate-500 max-w-lg leading-relaxed">
-            "Building resilient systems. Breaking the unbreakable."
-          </p>
+        <div class="hero-meta reveal-fade">
+          <p class="role-line mono">~/whoami <b id="role-rotator">Full-Stack Engineer</b><span class="caret small"></span></p>
+          <p class="loc-line mono"><svg class="i"><use href="#i-pin" /></svg> Kathmandu, Nepal · UTC+5:45 · <span class="status-live">open to security &amp; platform work</span></p>
         </div>
-
-        <div class="flex flex-wrap gap-6 items-center">
-          <a href="#projects"
-            class="group relative px-12 py-5 bg-[#FA927F] text-black font-black mono text-xs uppercase tracking-widest overflow-hidden transition-all">
-            <span class="relative z-10">INIT_ENGAGEMENT</span>
-            <div
-              class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            </div>
+        <div class="hero-actions reveal-fade">
+          <a href="#work" class="btn" data-magnetic><svg class="i"><use href="#i-code" /></svg> View selected work</a>
+          <a href="https://github.com/therawbit" target="_blank" rel="noopener" class="btn btn-ghost" data-magnetic>
+            <svg viewBox="0 0 44 40" class="btn-mark" aria-hidden="true"><rect x="2" y="2" width="26" height="7" rx="1"/><rect x="2" y="11" width="30" height="7" rx="1"/><rect x="5" y="20" width="24" height="7" rx="1"/><rect x="14" y="29" width="22" height="7" rx="1"/></svg>
+            @therawbit
           </a>
-
-          <div
-            class="px-8 py-5 border border-white/5 bg-white/5 backdrop-blur-sm mono text-[11px] flex items-center gap-6">
-            <div class="flex items-center gap-2"><span class="text-[#FA927F]">●</span> IP: 127.0.0.1</div>
-            <div class="w-px h-4 bg-white/10"></div>
-            <div class="flex items-center gap-2"><span class="text-[#fdb3a7]">●</span> LOC: NEPAL</div>
-          </div>
         </div>
       </div>
+
+      <div class="hero-term reveal-fade" aria-hidden="true">
+        <div class="term-bar">
+          <span class="term-dots"><i></i><i></i><i></i></span>
+          <span class="term-title mono">sud@arch — ~/portfolio — 80×24</span>
+        </div>
+        <div class="term-screen">
+          <canvas id="term-logo" width="760" height="340" aria-label="3D hacker mask rendered as terminal pixels"></canvas>
+        </div>
+        <p class="term-foot mono"><span class="t-p">sud@arch:~/portfolio$</span> <span class="t-cmd">render favicon.png --3d</span><span class="caret small"></span></p>
+      </div>
+
+      <div class="scroll-cue mono" aria-hidden="true">scroll</div>
     </section>
-    <section id="skills" class="py-24 border-t border-white/5">
-      <div class="flex items-center gap-4 mb-16">
-        <h2 class="mono text-[#FA927F] text-sm tracking-[0.5em] uppercase">/usr/bin/capabilities</h2>
-        <div class="h-px flex-grow bg-gradient-to-r from-[#FA927F]/30 to-transparent"></div>
-      </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- ═══ TECH CAROUSEL ═══ -->
+    <div class="carousel" aria-hidden="true">
+      <div class="carousel-track" id="carousel-a"></div>
+      <div class="carousel-track reverse" id="carousel-b"></div>
+    </div>
 
-        <div
-          class="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#FA927F]/30 transition-all duration-500 overflow-hidden">
-          <div
-            class="absolute top-0 right-0 p-4 mono text-[0.6rem] text-white/10 group-hover:text-[#FA927F]/20 transition-colors">
-            MOD_01</div>
-
-          <div class="flex items-center gap-4 mb-8">
-            <div class="p-3 bg-[#FA927F]/10 rounded-xl text-[#FA927F] group-hover:scale-110 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-                <rect x="9" y="9" width="6" height="6"></rect>
-                <path d="M15 2v2"></path>
-                <path d="M15 20v2"></path>
-                <path d="M2 15h2"></path>
-                <path d="M2 9h2"></path>
-                <path d="M20 15h2"></path>
-                <path d="M20 9h2"></path>
-                <path d="M9 2v2"></path>
-                <path d="M9 20v2"></path>
-              </svg>
-            </div>
-            <h3 class="text-white text-xl font-black italic tracking-tight uppercase">Build_Env</h3>
-          </div>
-
-          <div class="space-y-8">
-            <div>
-              <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Core_Ecosystem</p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Java</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Spring
-                  Boot</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Hibernate</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Node.js</span>
-              </div>
-            </div>
-
-            <div>
-              <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Architecture_&_Data</p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">PostgreSQL</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Redis</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Kafka</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300 hover:border-[#FA927F]/50 transition-colors">Android</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#FA927F]/30 transition-all duration-500 overflow-hidden">
-          <div
-            class="absolute top-0 right-0 p-4 mono text-[0.6rem] text-white/10 group-hover:text-[#FA927F]/20 transition-colors">
-            MOD_02</div>
-
-          <div class="flex items-center gap-4 mb-8">
-            <div class="p-3 bg-[#FA927F]/10 rounded-xl text-[#FA927F] group-hover:scale-110 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-                <polyline points="4 17 10 11 4 5"></polyline>
-                <line x1="12" y1="19" x2="20" y2="19"></line>
-              </svg>
-            </div>
-            <h3 class="text-white text-xl font-black italic tracking-tight uppercase">Script_&_Web</h3>
-          </div>
-
-          <div class="space-y-8">
-            <div>
-              <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Web_Interface</p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Next.js</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">React</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Tailwind</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">TypeScript</span>
-              </div>
-            </div>
-
-            <div>
-              <p class="text-[0.65rem] mono text-[#FA927F] mb-3 uppercase tracking-[0.2em]">Logic_Automation</p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Python</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Bash</span>
-                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Linux
-                  (Arch)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#fdb3a7]/30 transition-all duration-500 overflow-hidden">
-          <div
-            class="absolute top-0 right-0 p-4 mono text-[0.6rem] text-white/10 group-hover:text-[#fdb3a7]/20 transition-colors">
-            MOD_03</div>
-
-          <div class="flex items-center gap-4 mb-8">
-            <div class="p-3 bg-[#fdb3a7]/10 rounded-xl text-[#fdb3a7] group-hover:scale-110 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                <path d="M9 12l2 2 4-4"></path>
-              </svg>
-            </div>
-            <h3 class="text-white text-xl font-black italic tracking-tight uppercase">Audit_&_Infra</h3>
-          </div>
-
-          <div class="space-y-8">
-            <div>
-              <p class="text-[0.65rem] mono text-[#fdb3a7] mb-3 uppercase tracking-[0.2em]">AppSec_&_RE</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Burp
-                  Suite</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Ghidra</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">JADX</span>
-                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Static
-                  Analysis</span>
-              </div>
-            </div>
-
-            <div>
-              <p class="text-[0.65rem] mono text-[#fdb3a7] mb-3 uppercase tracking-[0.2em]">DevOps_Environment</p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Docker</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Jenkins</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">CI/CD</span>
-                <span
-                  class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">Nginx</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
+    <!-- ═══ MANIFESTO ═══ -->
+    <section class="manifesto" id="about">
+      <p class="manifesto-text">
+        <span class="reveal-line"><span>“I build the system.</span></span>
+        <span class="reveal-line"><span>Then I <em>break it</em>.”</span></span>
+      </p>
+      <p class="manifesto-note mono reveal-fade">— one craft, two directions — engineer &amp; CTF player</p>
+      <div class="facts reveal-fade">
+        <div class="fact"><b class="fact-num" data-count="5">0</b><span class="mono">yrs in production</span></div>
+        <div class="fact"><b class="fact-num" data-count="5">0</b><span class="mono">security certifications</span></div>
+        <div class="fact"><b class="fact-num" data-count="25">0</b><span class="mono">public repos shipped</span></div>
+        <div class="fact"><b class="fact-num" data-count="4">0</b><span class="mono">companies hardened</span></div>
       </div>
     </section>
 
-    <section id="exps" class="py-16 border-t border-white/5">
-      <h2 class="mono text-[#FA927F] text-s mb-16 tracking-[0.5em] uppercase">/var/log/experience</h2>
-      <div id="exp"></div>
+    <!-- ═══ CAPABILITIES ═══ -->
+    <section id="capabilities">
+      <div class="section-head">
+        <h2 class="section-title reveal-line"><span>Capabilities</span></h2>
+        <span class="section-num mono">01</span>
+      </div>
+      <div class="cap-grid">
+        <div class="cap-col reveal-fade">
+          <h3 class="cap-title"><svg class="i cap-ico"><use href="#i-server" /></svg> Build<span class="cap-dim">/core</span></h3>
+          <ul class="cap-list">
+            <li>Java · Spring Boot · Hibernate</li>
+            <li>PostgreSQL · Redis · Kafka</li>
+            <li>Python · Node.js · Kotlin</li>
+            <li>REST &amp; API design · Android</li>
+          </ul>
+        </div>
+        <div class="cap-col reveal-fade">
+          <h3 class="cap-title"><svg class="i cap-ico"><use href="#i-cloud" /></svg> Ship<span class="cap-dim">/platform</span></h3>
+          <ul class="cap-list">
+            <li>React · Next.js · TypeScript</li>
+            <li>AWS · Docker · Nginx · TLS</li>
+            <li>Linux (Arch) · Bash · CI/CD · Jenkins</li>
+            <li>Networking — routing, firewalls, teaching it too</li>
+          </ul>
+        </div>
+        <div class="cap-col reveal-fade">
+          <h3 class="cap-title"><svg class="i cap-ico"><use href="#i-shield" /></svg> Break<span class="cap-dim">/audit</span></h3>
+          <ul class="cap-list">
+            <li>Burp Suite · OWASP Top 10</li>
+            <li>Ghidra · JADX · pwn · Cryptopals</li>
+            <li>Malware ML classification · Wireshark</li>
+            <li>CTF player — writeups published on the blog</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="certs" class="py-16 border-t border-white/5">
-      <h2 class="mono text-[#FA927F] text-s mb-16 tracking-[0.5em] uppercase">/verified_tokens</h2>
-      <div id="cert-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+    <!-- ═══ WORK ═══ -->
+    <section id="work">
+      <div class="section-head">
+        <h2 class="section-title reveal-line"><span>Selected Work</span></h2>
+        <span class="section-num mono">02</span>
+      </div>
+      <div id="work-list" class="work-list"></div>
+
+      <div class="gh-live" id="gh-live">
+        <p class="gh-live-head mono reveal-fade">
+          <svg class="i"><use href="#i-terminal" /></svg> pulled live from
+          <a href="https://github.com/therawbit" target="_blank" rel="noopener">github.com/therawbit</a>
+          <span class="gh-stats" id="gh-stats"></span>
+        </p>
+        <div class="repo-grid" id="repo-grid"></div>
+      </div>
     </section>
 
-    <section id="projects" class="py-16 border-t border-white/5">
-      <h2 class="mono text-[#FA927F] text-s mb-16 tracking-[0.5em] uppercase">/mnt/projects</h2>
-      <div id="project-rack" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+
+    <!-- ═══ TRAJECTORY ═══ -->
+    <section id="trajectory">
+      <div class="section-head">
+        <h2 class="section-title reveal-line"><span>Trajectory</span></h2>
+        <span class="section-num mono">03</span>
+      </div>
+      <div id="exp-list" class="exp-list"></div>
     </section>
 
-    <section id="education" class="py-16 border-t border-white/5">
-      <h2 class="mono text-[#FA927F] text-s mb-16 tracking-[0.5em] uppercase">/binary_origins</h2>
-      <div id="education-card" class="grid grid-cols-1 md:grid-cols-2 gap-10"></div>
+    <!-- ═══ CREDENTIALS ═══ -->
+    <section id="credentials">
+      <div class="section-head">
+        <h2 class="section-title reveal-line"><span>Credentials</span></h2>
+        <span class="section-num mono">04</span>
+      </div>
+      <div id="cert-grid" class="cert-grid"></div>
+      <div class="edu-strip" id="education-card"></div>
+    </section>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section class="contact" id="contact">
+      <p class="kicker mono reveal-line"><span>Open to security engineering &amp; full-stack platform roles</span></p>
+      <h2 class="contact-title reveal-line">
+        <span>Let's build something</span>
+      </h2>
+      <h2 class="contact-title reveal-line"><span><em>hard to break</em><span class="accent-dot">.</span></span></h2>
+      <a class="contact-email reveal-fade" href="mailto:contact@sudarshandevkota.com.np" data-magnetic><svg class="i"><use href="#i-mail" /></svg> contact@sudarshandevkota.com.np</a>
+      <div class="socials reveal-fade">
+        <a href="https://github.com/therawbit" target="_blank" rel="noopener"><svg class="i"><use href="#i-code" /></svg> GitHub ↗</a>
+        <a href="https://linkedin.com/in/sudarshandevkota/" target="_blank" rel="noopener"><svg class="i"><use href="#i-link" /></svg> LinkedIn ↗</a>
+        <a href="https://blog.sudarshandevkota.com.np" target="_blank" rel="noopener"><svg class="i"><use href="#i-blog" /></svg> Blog · CTF writeups ↗</a>
+      </div>
     </section>
   </main>
 
-  <footer id="contact" class="py-16 border-t border-white/5 bg-[#080808]">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <div class="flex justify-center gap-8 mb-12">
-        <a href="https://github.com/therawbit" target="_blank"
-          class="p-4 bg-white/5 rounded-full hover:bg-[#FA927F] hover:text-black transition-all">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-            <path
-              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-            </path>
-          </svg>
-        </a>
-        <a href="https://linkedin.com/in/sudarshandevkota/" target="_blank"
-          class="p-4 bg-white/5 rounded-full hover:bg-[#fdb3a7] hover:text-black transition-all">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
-        <a href="mailto:contact@sudarshandevkota.com.np"
-          class="p-4 bg-white/5 rounded-full hover:bg-white hover:text-black transition-all">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-          </svg>
-        </a>
-      </div>
-      <p class="mono text-[0.75rem] text-slate-500 tracking-[0.4em] uppercase">
-        &copy; 2026 Sudarshan Devkota <span class="mx-4 text-white/10">|</span> TheRawBit <span
-          class="mx-4 text-white/10">|</span> End_of_Line
-      </p>
-    </div>
+  <footer class="site-foot">
+    <p class="mono">© 2026 Sudarshan Devkota · TheRawBit</p>
+    <p class="mono">Builder Breaker and Contributor</p>
   </footer>
-  <script src="script.js"></script>
+
+  <!-- ═══ CERT MODAL ═══ -->
+  <div id="cert-modal" role="dialog" aria-modal="true">
+    <figure class="modal-frame">
+      <img id="modal-img" src="" alt="Certificate" />
+      <figcaption class="modal-hint mono">press esc or click outside to exit</figcaption>
+    </figure>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
